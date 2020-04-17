@@ -28,11 +28,11 @@ public class BinarySearch {
             int key = StdIn.readInt();
             if (rank(key, whitelist) < 0) {
                 if (s.equals("+")) {
-                    StdOut.println(key);                    
+                    StdOut.println(key);
                 }
             } else {
                 if (s.equals("-")) {
-                    StdOut.println(key);                    
+                    StdOut.println(key);
                 }
             }
         }
