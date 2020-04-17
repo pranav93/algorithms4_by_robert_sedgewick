@@ -1,0 +1,7 @@
+*.classpath
+*.project
+*.settings*
+*.class
+*largeT.txt
+*largeW.txt
+*.swp
