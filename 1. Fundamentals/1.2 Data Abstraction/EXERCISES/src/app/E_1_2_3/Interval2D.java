@@ -29,6 +29,10 @@ public class Interval2D {
         return this.xInterval.contains(p.x()) && this.yInterval.contains(p.y());
     }
 
+    public boolean contains(Interval2D that) {
+        return this.xInterval.contains(that.xInterval()) && this.yInterval.contains(that.xInterval());
+    }
+
     public boolean intersects(Interval2D that) {
         return this.xInterval.intersects(that.xInterval()) && this.yInterval.intersects(that.yInterval());
     }

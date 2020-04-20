@@ -22,6 +22,10 @@ public class Interval1D {
         return this.lo <= x && x <= this.hi;
     }
 
+    public boolean contains(Interval1D that) {
+        return this.lo <= that.lo && that.hi <= this.hi;
+    }
+
     public boolean intersects(Interval1D that) {
         if (this.lo > that.hi) {
             return false;

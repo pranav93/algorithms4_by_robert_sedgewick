@@ -37,5 +37,14 @@ public class Interval2DClient {
                 }
             }
         }
+
+        // Brute Force
+        for (int i = 0; i < N; i++) {
+            for (int j = i + 1; j < N; j++) {
+                if (interval2DArr[i].contains(interval2DArr[j])) {
+                    StdOut.println(i + " contains " + j + ".");
+                }
+            }
+        }
     }
 }
