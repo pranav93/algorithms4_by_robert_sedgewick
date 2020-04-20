@@ -1,4 +1,4 @@
-package app.E_1_2_4;
+package app.E_1_2_6;
 
 import edu.princeton.cs.algs4.StdOut;
 
