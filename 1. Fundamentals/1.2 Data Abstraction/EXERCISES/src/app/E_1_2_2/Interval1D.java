@@ -39,4 +39,12 @@ public class Interval1D {
     public String toString() {
         return "lo -> " + this.lo + " | hi -> " + this.hi;
     }
+
+    public double lo() {
+        return this.lo;
+    }
+
+    public double hi() {
+        return this.hi;
+    }
 }

@@ -3,8 +3,8 @@ package app.E_1_2_1;
 import edu.princeton.cs.algs4.StdDraw;
 
 public class Point2D {
-    final double x;
-    final double y;
+    private final double x;
+    private final double y;
 
     Point2D(double x, double y) {
         this.x = x;
