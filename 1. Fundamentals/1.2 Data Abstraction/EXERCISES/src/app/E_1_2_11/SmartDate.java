@@ -11,11 +11,11 @@ public class SmartDate {
     private final int monthFeb = 2;
     private final boolean isLeapYear;
     private String dayOfTheWeek;
-    private int totalDays;
+    private Integer totalDays;
     private final String[] daysStringArr = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday",
             "Saturday" };
 
-    SmartDate(int date, int month, int year) {
+    public SmartDate(int date, int month, int year) {
         if (!(date > 0 && date < 32)) {
             throw new IllegalArgumentException("Date should be in between 1 and 31 inclusive.");
         }
@@ -48,6 +48,7 @@ public class SmartDate {
         this.year = year;
         this.month = month;
         this.date = date;
+        calculateTotalDays();
     }
 
     private static boolean isLeapYear(int year) {
@@ -94,6 +95,10 @@ public class SmartDate {
     private void calculateTotalDays() {
         int totalDays = 0;
 
+        if (this.totalDays != null) {
+            return;
+        }
+
         // Total days till previous year
         for (int i = 1; i < this.year; i++) {
             totalDays += 365;
@@ -119,5 +124,15 @@ public class SmartDate {
         }
         totalDays += this.date;
         this.totalDays = totalDays;
+    }
+
+    public int equals(SmartDate that) {
+        if (this.totalDays > that.totalDays) {
+            return 1;
+        } else if (this.totalDays < that.totalDays) {
+            return -1;
+        } else {
+            return 0;
+        }
     }
 }
