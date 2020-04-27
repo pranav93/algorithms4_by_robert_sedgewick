@@ -1,5 +1,7 @@
 package E_1_3_9;
 
+import edu.princeton.cs.algs4.StdOut;
+
 public class StackStr {
     class Node {
         String item;
@@ -25,7 +27,19 @@ public class StackStr {
         return temp.item;
     }
 
+    public String top() {
+        return this.first.item;
+    }
+
     public boolean isEmpty() {
         return this.N == 0;
+    }
+
+    public void stackContents() {
+        StdOut.printf("HEAD -> \t");
+        for (Node current = this.first; current != null; current = current.next) {
+            StdOut.printf("Node [ %s ] ->\t", current.item);
+        }
+        StdOut.printf("NULL\n");
     }
 }
