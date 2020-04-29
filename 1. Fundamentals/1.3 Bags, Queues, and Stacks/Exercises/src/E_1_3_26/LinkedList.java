@@ -1,4 +1,4 @@
-package E_1_3_25;
+package E_1_3_26;
 
 import edu.princeton.cs.algs4.StdOut;
 
@@ -103,5 +103,23 @@ public class LinkedList {
         current.next = temp;
         this.N++;
         return true;
+    }
+
+    public void remove(String key) {
+        Node current = this.first;
+        Node prev = null;
+        while (current != null) {
+            if (current.item.equals(key)) {
+                if (prev == null) {
+                    this.first = current.next;
+                } else {
+                    prev.next = current.next;
+                }
+                this.N--;
+            } else {
+                prev = current;
+            }
+            current = current.next;
+        }
     }
 }
