@@ -10,8 +10,12 @@ public class Client {
         while (!StdIn.isEmpty()) {
             String input = StdIn.readString();
             if (input.equals("-")) {
-                String item = q.deque();
-                StdOut.println("Dequed item is -> " + item);
+                if (q.isEmpty()) {
+                    StdOut.println("The q is empty");
+                } else {
+                    String item = q.deque();
+                    StdOut.println("Dequed item is -> " + item);
+                }
             } else {
                 q.enque(input);
             }
