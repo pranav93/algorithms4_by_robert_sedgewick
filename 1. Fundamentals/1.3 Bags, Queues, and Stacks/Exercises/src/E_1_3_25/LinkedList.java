@@ -1,4 +1,4 @@
-package E_1_3_21;
+package E_1_3_25;
 
 import edu.princeton.cs.algs4.StdOut;
 
@@ -73,5 +73,34 @@ public class LinkedList {
             current = current.next;
         }
         return false;
+    }
+
+    public boolean removeAfter(String key) {
+        Node current = this.first;
+        while (current != null && !current.item.equals(key)) {
+            current = current.next;
+        }
+        if (current == null || current.next == null) {
+            return false;
+        }
+        Node target = current.next;
+        current.next = target.next;
+        this.N--;
+        return true;
+    }
+
+    public boolean insertAfter(String key, String val) {
+        Node current = this.first;
+        while (current != null && !current.item.equals(key)) {
+            current = current.next;
+        }
+        if (current == null) {
+            return false;
+        }
+        Node temp = new Node();
+        temp.item = val;
+        temp.next = current.next;
+        current.next = temp;
+        return true;
     }
 }

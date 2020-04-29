@@ -60,6 +60,7 @@ public class LinkedList {
         current = current.next;
         String item = current.item;
         prev.next = current.next;
+        this.N--;
         return item;
     }
 
@@ -84,6 +85,7 @@ public class LinkedList {
         }
         Node target = current.next;
         current.next = target.next;
+        this.N--;
         return true;
     }
 }
