@@ -4,20 +4,17 @@ import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
 public class ShellSort {
-    public static void sort(Comparable[] a) {
+    public static void sort(Comparable[] a, int[] b) {
         int N = a.length;
-        int h = 1;
-        while (h <= N) {
-            h = 3 * h + 1;
-        }
+        int bN = b.length;
 
-        while (h >= 1) {
+        for (int h_index = bN - 1; h_index >= 0; h_index--) {
+            int h = b[h_index];
             for (int i = h; i < N; i++) {
                 for (int j = i; j >= h && less(a[j], a[j - h]); j -= h) {
                     exch(a, j, j - h);
                 }
             }
-            h /= 3;
         }
     }
 
@@ -50,8 +47,9 @@ public class ShellSort {
     }
 
     public static void main(String[] args) {
-        String[] a = StdIn.readStrings();
-        sort(a);
+        String[] a = StdIn.readLine().split(" ");
+        int[] b = StdIn.readInts();
+        sort(a, b);
         assert isSorted(a);
         show(a);
     }
