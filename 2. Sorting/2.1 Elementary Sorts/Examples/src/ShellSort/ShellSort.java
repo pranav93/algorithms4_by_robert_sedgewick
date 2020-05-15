@@ -7,6 +7,7 @@ public class ShellSort {
     public static void sort(Comparable[] a) {
         int N = a.length;
         int h = 1;
+        // int exchanges = 0;
         while (h < N / 3) {
             h = 3 * h + 1;
         }
@@ -14,10 +15,12 @@ public class ShellSort {
             for (int i = h; i < N; i++) {
                 for (int j = i; j >= h && less(a[j], a[j - h]); j -= h) {
                     exch(a, j, j - h);
+                    // exchanges++;
                 }
             }
             h = h / 3;
         }
+        // StdOut.println("exchanges -> " + exchanges);
     }
 
     private static boolean less(Comparable v, Comparable w) {
