@@ -1,0 +1,42 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MergeSortBU<Exercises_665a987c>",
+            "request": "launch",
+            "mainClass": "E_2_2_6.MergeSortBU",
+            "projectName": "Exercises_665a987c"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MergeSortTD<Exercises_665a987c>",
+            "request": "launch",
+            "mainClass": "E_2_2_6.MergeSortTD",
+            "projectName": "Exercises_665a987c"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MergeSort<Exercises_665a987c>",
+            "request": "launch",
+            "mainClass": "E_2_2_8.MergeSort",
+            "projectName": "Exercises_665a987c"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MergeSortAux<Exercises_665a987c>",
+            "request": "launch",
+            "mainClass": "E_2_2_9.MergeSortAux",
+            "projectName": "Exercises_665a987c"
+        }
+    ]
+}
