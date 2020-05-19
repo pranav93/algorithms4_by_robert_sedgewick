@@ -71,9 +71,8 @@ public class Quick {
 
     public static void main(String[] args) {
         String[] s = StdIn.readStrings();
-        Quick q = new Quick();
-        q.sort(s);
-        assert q.isSorted(s);
-        q.show(s);
+        sort(s);
+        assert isSorted(s);
+        show(s);
     }
 }
