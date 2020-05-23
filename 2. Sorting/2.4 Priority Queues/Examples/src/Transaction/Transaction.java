@@ -1,4 +1,4 @@
-package ArrayRepresentation.Transaction;
+package Transaction;
 
 public class Transaction implements Comparable<Transaction> {
 

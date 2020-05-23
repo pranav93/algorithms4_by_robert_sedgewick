@@ -1,7 +1,7 @@
 package ArrayRepresentation.Ordered;
 
-import ArrayRepresentation.Stack.Stack;
-import ArrayRepresentation.Transaction.Transaction;
+import Stack.Stack;
+import Transaction.Transaction;
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 

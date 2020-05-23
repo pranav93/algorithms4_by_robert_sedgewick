@@ -1,4 +1,4 @@
-package ArrayRepresentation.Stack;
+package Stack;
 
 import java.util.Iterator;
 
