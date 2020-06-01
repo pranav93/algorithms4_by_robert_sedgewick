@@ -22,10 +22,10 @@ public class HeapSort {
         for (int i = N / 2; i >= 1; i--) {
             sink(arr, i, N);
         }
-        while (N > 1) {
-            exch(arr, 1, N--);
-            sink(arr, 1, N);
-        }
+        // while (N > 1) {
+        //     exch(arr, 1, N--);
+        //     sink(arr, 1, N);
+        // }
     }
 
     private static void exch(String[] arr, int i, int j) {
@@ -37,10 +37,10 @@ public class HeapSort {
     private static void sink(String[] arr, int k, int N) {
         while (2 * k <= N) {
             int j = 2 * k;
-            if (j < N && less(arr, j, j + 1)) {
+            if (j < N && !less(arr, j, j + 1)) {
                 j++;
             }
-            if (less(arr, k, j)) {
+            if (!less(arr, k, j)) {
                 exch(arr, k, j);
             }
             k = j;
