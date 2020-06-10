@@ -113,4 +113,29 @@ public class ST<Key extends Comparable<Key>, Value> {
         }
         return false;
     }
+
+    public Key min() {
+        return this.keys[0];
+    }
+
+    public Key max() {
+        return this.keys[this.N - 1];
+    }
+
+    public Key select(int k) {
+        return this.keys[k];
+    }
+
+    public Key ceiling(Key key) {
+        int i = rank(key);
+        return this.keys[i];
+    }
+
+    public Key floor(Key key) {
+        int i = rank(key);
+        if (--i < 0) {
+            return null;
+        }
+        return this.keys[i];
+    }
 }
