@@ -3,7 +3,29 @@
     // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
-    "configurations": [{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Client",
+            "request": "launch",
+            "mainClass": "E_3_1_12.Client",
+            "projectName": "Exercises_a60c6288"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BinarySearchST",
+            "request": "launch",
+            "mainClass": "E_3_1_12.BinarySearchST",
+            "projectName": "Exercises_a60c6288"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MergeSort",
+            "request": "launch",
+            "mainClass": "E_3_1_12.MergeSort",
+            "projectName": "Exercises_a60c6288"
+        },
+        {
             "type": "java",
             "name": "Debug (Launch) - Current File",
             "request": "launch",
