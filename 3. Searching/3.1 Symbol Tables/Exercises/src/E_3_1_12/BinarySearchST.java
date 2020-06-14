@@ -6,7 +6,7 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> {
     private Node<Key, Value>[] arr;
     private int N;
 
-    BinarySearchST(Node<Key, Value>[] initArr) {
+    public BinarySearchST(Node<Key, Value>[] initArr) {
         this.N = initArr.length;
         this.arr = (Node<Key, Value>[]) new Node[this.N];
         for (int i = 0; i < this.N; i++) {
@@ -14,6 +14,11 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> {
         }
         new MergeSort<Node<Key, Value>>(this.arr);
         resize(this.N * 2);
+    }
+
+    public BinarySearchST() {
+        this.N = 0;
+        this.arr = (Node<Key, Value>[]) new Node[1];
     }
 
     public Value get(Key key) {

@@ -88,6 +88,14 @@
             "mainClass": "E_3_1_9.FrequencyCounter",
             "projectName": "Exercises_a60c6288",
             "args": "< tale.txt"
+        },
+        {
+            "type": "java",
+            "name": "E_3_1_19 (Launch) - FrequencyCounter",
+            "request": "launch",
+            "mainClass": "E_3_1_19.FrequencyCounter",
+            "projectName": "Exercises_a60c6288",
+            "args": "< tale.txt"
         }
     ]
 }
