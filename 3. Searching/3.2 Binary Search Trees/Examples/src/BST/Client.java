@@ -10,7 +10,14 @@ public class Client {
         for (int i = 0; i < arr.length; i++) {
             bst.put(arr[i], i);
         }
+        printAll(arr, bst);
+        StdOut.println("------------------------------");
+        StdOut.println("Smallest key -> " + bst.min());
+        StdOut.println("------------------------------");
+        StdOut.println("Largest key -> " + bst.max());
+    }
 
+    private static void printAll(String[] arr, BST<String, Integer> bst) {
         for (int i = 0; i < arr.length; i++) {
             StdOut.println(arr[i] + " -> " + bst.get(arr[i]));
         }

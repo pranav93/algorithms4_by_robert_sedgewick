@@ -65,4 +65,26 @@ public class BST<Key extends Comparable<Key>, Value> {
     public int size() {
         return this.size(this.root);
     }
+
+    public Key min() {
+        return this.min(this.root);
+    }
+
+    private Key min(Node node) {
+        if (node.left == null) {
+            return node.key;
+        }
+        return this.min(node.left);
+    }
+
+    public Key max() {
+        return this.max(this.root);
+    }
+
+    private Key max(Node node) {
+        if (node.right == null) {
+            return node.key;
+        }
+        return this.max(node.right);
+    }
 }
