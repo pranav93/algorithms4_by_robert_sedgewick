@@ -113,4 +113,17 @@ public class BST<Key extends Comparable<Key>, Value> {
         return leftCeiling;
     }
 
+    public Key select(int k) {
+        Node node = this.select(this.root, k);
+        if (node == null) return null;
+        return node.key;
+    }
+
+    private Node select(Node node, int k) {
+        if (node == null) return null;
+        int t = size(node.left);
+        if (t == k) return node;
+        if (t > k) return this.select(node.left, k);
+        return this.select(node.right, k - t - 1);
+    }
 }

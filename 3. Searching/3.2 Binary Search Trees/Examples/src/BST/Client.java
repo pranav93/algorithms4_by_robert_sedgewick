@@ -28,6 +28,9 @@ public class Client {
         StdOut.println(Arrays.toString(arr));
         printCeiling(strArr, bst);
         StdOut.println("------------------------------");
+        for (int i = 0; i < 10; i++) {
+            StdOut.println("select(" + i + ") -> " + bst.select(i));
+        }
     }
 
     private static void printAll(String[] arr, BST<String, Integer> bst) {
