@@ -22,9 +22,8 @@ public class BST<Key extends Comparable<Key>, Value> {
     }
 
     private Node put(Node node, Key key, Value value) {
-        if (node == null) {
-            return new Node(key, value, 1);
-        }
+        if (node == null) return new Node(key, value, 1);
+
         int cmp = key.compareTo(node.key);
         if (cmp < 0) {
             node.left = put(node.left, key, value);
@@ -38,9 +37,7 @@ public class BST<Key extends Comparable<Key>, Value> {
     }
 
     private int size(Node node) {
-        if (node == null) {
-            return 0;
-        }
+        if (node == null) return 0;
         return node.N;
     }
 
@@ -49,9 +46,8 @@ public class BST<Key extends Comparable<Key>, Value> {
     }
 
     private Value get(Node node, Key key) {
-        if (node == null) {
-            return null;
-        }
+        if (node == null) return null;
+
         int cmp = key.compareTo(node.key);
         if (cmp < 0) {
             return this.get(node.left, key);
@@ -71,9 +67,7 @@ public class BST<Key extends Comparable<Key>, Value> {
     }
 
     private Key min(Node node) {
-        if (node.left == null) {
-            return node.key;
-        }
+        if (node.left == null) return node.key;
         return this.min(node.left);
     }
 
@@ -82,9 +76,8 @@ public class BST<Key extends Comparable<Key>, Value> {
     }
 
     private Key max(Node node) {
-        if (node.right == null) {
-            return node.key;
-        }
+        if (node.right == null) return node.key;
+
         return this.max(node.right);
     }
 
