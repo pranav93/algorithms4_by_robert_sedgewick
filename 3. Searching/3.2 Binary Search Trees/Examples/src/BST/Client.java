@@ -31,6 +31,12 @@ public class Client {
         for (int i = 0; i < 10; i++) {
             StdOut.println("select(" + i + ") -> " + bst.select(i));
         }
+        StdOut.println("------------------------------");
+        String[] keyArr = "A C E H L M P R S X".split(" ");
+        for (int i = 0; i < keyArr.length; i++) {
+            StdOut.println("select(" + keyArr[i] + ") -> " + bst.rank(keyArr[i]));
+        }
+        StdOut.println("select(" + "Z" + ") -> " + bst.rank("Z"));
     }
 
     private static void printAll(String[] arr, BST<String, Integer> bst) {

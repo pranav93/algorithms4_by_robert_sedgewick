@@ -126,4 +126,16 @@ public class BST<Key extends Comparable<Key>, Value> {
         if (t > k) return this.select(node.left, k);
         return this.select(node.right, k - t - 1);
     }
+
+    public int rank(Key key) {
+        return this.rank(this.root, key);
+    }
+
+    private int rank(Node node, Key key) {
+        if (node == null) return 0;
+        int cmp = key.compareTo(node.key);
+        if (cmp == 0) return this.size(node.left);
+        if (cmp < 0) return this.rank(node.left, key);
+        return this.size(node.left) + 1 + this.rank(node.right, key);
+    }
 }
