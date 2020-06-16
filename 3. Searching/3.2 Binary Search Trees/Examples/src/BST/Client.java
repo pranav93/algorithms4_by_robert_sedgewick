@@ -1,5 +1,10 @@
 package BST;
 
+import java.util.Arrays;
+
+import edu.princeton.cs.algs4.Quick;
+import edu.princeton.cs.algs4.Quick3string;
+import edu.princeton.cs.algs4.Quick3way;
 import edu.princeton.cs.algs4.StdOut;
 
 public class Client {
@@ -15,6 +20,13 @@ public class Client {
         StdOut.println("Smallest key -> " + bst.min());
         StdOut.println("------------------------------");
         StdOut.println("Largest key -> " + bst.max());
+        StdOut.println("------------------------------");
+        String[] strArr = "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z".split(" ");
+        Quick3way.sort(arr);
+        StdOut.println(Arrays.toString(arr));
+        for (int i = 0; i < strArr.length; i++) {
+            StdOut.println("Floor of " + strArr[i] + " -> " + bst.floor(strArr[i]));
+        }
     }
 
     private static void printAll(String[] arr, BST<String, Integer> bst) {

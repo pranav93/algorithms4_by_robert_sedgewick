@@ -87,4 +87,31 @@ public class BST<Key extends Comparable<Key>, Value> {
         }
         return this.max(node.right);
     }
+
+    public Key floor(Key key) {
+        Node node = this.floor(this.root, key);
+        if (node == null) {
+            return null;
+        }
+        return node.key;
+    }
+
+    private Node floor(Node node, Key key) {
+        if (node == null) {
+            return null;
+        }
+        int cmp = key.compareTo(node.key);
+        if (cmp < 0) {
+            return this.floor(node.left, key);
+        } else if (cmp > 0) {
+            Node rightFloor = this.floor(node.right, key);
+            if (rightFloor == null) {
+                return node;
+            } else {
+                return rightFloor;
+            }
+        } else {
+            return node;
+        }
+    }
 }
