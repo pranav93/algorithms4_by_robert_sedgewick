@@ -90,28 +90,34 @@ public class BST<Key extends Comparable<Key>, Value> {
 
     public Key floor(Key key) {
         Node node = this.floor(this.root, key);
-        if (node == null) {
-            return null;
-        }
+        if (node == null) return null;
         return node.key;
     }
 
     private Node floor(Node node, Key key) {
-        if (node == null) {
-            return null;
-        }
+        if (node == null) return null;
         int cmp = key.compareTo(node.key);
-        if (cmp < 0) {
-            return this.floor(node.left, key);
-        } else if (cmp > 0) {
-            Node rightFloor = this.floor(node.right, key);
-            if (rightFloor == null) {
-                return node;
-            } else {
-                return rightFloor;
-            }
-        } else {
-            return node;
-        }
+        if (cmp == 0) return node;
+        if (cmp < 0) return this.floor(node.left, key);
+        Node rightFloor = this.floor(node.right, key);
+        if (rightFloor == null) return node;
+        return rightFloor;
     }
+
+    public Key ceiling(Key key) {
+        Node node = this.ceiling(this.root, key);
+        if (node == null) return null;
+        return node.key;
+    }
+
+    private Node ceiling(Node node, Key key) {
+        if (node == null) return null;
+        int cmp = key.compareTo(node.key);
+        if (cmp == 0) return node;
+        if (cmp > 0) return this.ceiling(node.right, key);
+        Node leftCeiling = this.ceiling(node.left, key);
+        if (leftCeiling == null) return node;
+        return leftCeiling;
+    }
+
 }
