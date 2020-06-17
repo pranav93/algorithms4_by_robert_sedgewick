@@ -1,5 +1,7 @@
 package BST;
 
+import edu.princeton.cs.algs4.StdOut;
+
 public class BST<Key extends Comparable<Key>, Value> {
     private class Node {
         Key key;
@@ -137,5 +139,29 @@ public class BST<Key extends Comparable<Key>, Value> {
         if (cmp == 0) return this.size(node.left);
         if (cmp < 0) return this.rank(node.left, key);
         return this.size(node.left) + 1 + this.rank(node.right, key);
+    }
+
+    public void deleteMin() {
+        if (this.root == null) return;
+        this.root = this.deleteMin(this.root);
+    }
+
+    private Node deleteMin(Node node) {
+        if (node.left == null) return node.right;
+        node.left = this.deleteMin(node.left);
+        node.N = 1 + size(node.left) + size(node.right);
+        return node;
+    }
+
+    public void deleteMax() {
+        if (this.root == null) return;
+        this.root = this.deleteMax(this.root);
+    }
+
+    private Node deleteMax(Node node) {
+        if (node.right == null) return node.left;
+        node.right = deleteMax(node.right);
+        node.N = 1 + size(node.left) + size(node.right);
+        return node;
     }
 }

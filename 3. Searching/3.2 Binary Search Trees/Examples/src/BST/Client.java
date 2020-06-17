@@ -37,6 +37,22 @@ public class Client {
             StdOut.println("select(" + keyArr[i] + ") -> " + bst.rank(keyArr[i]));
         }
         StdOut.println("select(" + "Z" + ") -> " + bst.rank("Z"));
+        StdOut.println("------------------------------");
+        for (int i = 0; i < 10; i++) {
+            StdOut.println("Smallest key is -> " + bst.min());
+            bst.deleteMin();
+            StdOut.println("ran deleteMin()");
+        }
+        StdOut.println("------------------------------");
+        for (int i = 0; i < arr.length; i++) {
+            bst.put(arr[i], i);
+        }
+        StdOut.println("------------------------------");
+        for (int i = 0; i < 10; i++) {
+            StdOut.println("Largest key is -> " + bst.max());
+            bst.deleteMax();
+            StdOut.println("ran deleteMax()");
+        }
     }
 
     private static void printAll(String[] arr, BST<String, Integer> bst) {
