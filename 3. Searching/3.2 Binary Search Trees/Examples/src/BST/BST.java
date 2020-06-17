@@ -1,7 +1,5 @@
 package BST;
 
-import edu.princeton.cs.algs4.StdOut;
-
 public class BST<Key extends Comparable<Key>, Value> {
     private class Node {
         Key key;
@@ -65,21 +63,22 @@ public class BST<Key extends Comparable<Key>, Value> {
     }
 
     public Key min() {
-        return this.min(this.root);
+        if (this.root == null) return null;
+        return this.min(this.root).key;
     }
 
-    private Key min(Node node) {
-        if (node.left == null) return node.key;
+    private Node min(Node node) {
+        if (node.left == null) return node;
         return this.min(node.left);
     }
 
     public Key max() {
-        return this.max(this.root);
+        if (this.root == null) return null;
+        return this.max(this.root).key;
     }
 
-    private Key max(Node node) {
-        if (node.right == null) return node.key;
-
+    private Node max(Node node) {
+        if (node.right == null) return node;
         return this.max(node.right);
     }
 
@@ -162,6 +161,32 @@ public class BST<Key extends Comparable<Key>, Value> {
         if (node.right == null) return node.left;
         node.right = deleteMax(node.right);
         node.N = 1 + size(node.left) + size(node.right);
+        return node;
+    }
+
+    public void delete(Key key) {
+        this.root = this.deleteSuccNode(this.root, key);
+    }
+
+    private Node deleteSuccNode(Node node, Key key) {
+        if (node == null) return null;
+
+        int cmp = key.compareTo(node.key);
+        if (cmp < 0) {
+            node.left = this.deleteSuccNode(node.left, key);
+        } else if (cmp > 0) {
+            node.right = this.deleteSuccNode(node.right, key);
+        } else {
+            if (node.right == null) return node.left;
+            if (node.left == null) return node.right;
+            Node succNode = this.min(node.right);
+            succNode.right = this.deleteMin(node.right);
+            succNode.left = node.left;
+            node.left = null;
+            node.right = null;
+            node = succNode;
+        }
+        node.N = 1 + this.size(node.left) + this.size(node.right);
         return node;
     }
 }

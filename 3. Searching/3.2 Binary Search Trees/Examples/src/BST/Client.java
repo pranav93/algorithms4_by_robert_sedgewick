@@ -43,7 +43,7 @@ public class Client {
             bst.deleteMin();
             StdOut.println("ran deleteMin()");
         }
-        StdOut.println("------------------------------");
+        arr = "S E A R C H E X A M P L E".split(" ");
         for (int i = 0; i < arr.length; i++) {
             bst.put(arr[i], i);
         }
@@ -52,6 +52,19 @@ public class Client {
             StdOut.println("Largest key is -> " + bst.max());
             bst.deleteMax();
             StdOut.println("ran deleteMax()");
+        }
+        for (int i = 0; i < arr.length; i++) {
+            bst.put(arr[i], i);
+        }
+        StdOut.println("------------------------------");
+        StdOut.println("size -> " + bst.size());
+        for (int i = 0; i < 10; i++) {
+            StdOut.println("get(" + keyArr[i] + ") -> " + bst.get(keyArr[i]));
+            StdOut.println("Deleting \"" + keyArr[i] + "\"");
+            bst.delete(keyArr[i]);
+            StdOut.println("get(" + keyArr[i] + ") -> " + bst.get(keyArr[i]));
+            StdOut.println("size -> " + bst.size());
+            StdOut.println("************");
         }
     }
 
