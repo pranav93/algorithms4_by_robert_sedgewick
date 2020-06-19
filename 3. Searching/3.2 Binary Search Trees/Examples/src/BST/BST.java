@@ -1,5 +1,7 @@
 package BST;
 
+import edu.princeton.cs.algs4.Queue;
+
 public class BST<Key extends Comparable<Key>, Value> {
     private class Node {
         Key key;
@@ -188,5 +190,27 @@ public class BST<Key extends Comparable<Key>, Value> {
         }
         node.N = 1 + this.size(node.left) + this.size(node.right);
         return node;
+    }
+
+    public Iterable<Key> keys(Key lo, Key hi) {
+        Queue<Key> q = new Queue<Key>();
+        this.keys(this.root, lo, hi, q);
+        return q;
+    }
+
+    public Iterable<Key> keys() {
+        Queue<Key> q = new Queue<Key>();
+        this.keys(this.root, this.min(), this.max(), q);
+        return q;
+    }
+
+    private void keys(Node node, Key lo, Key hi, Queue<Key> q) {
+        if (node == null) return;
+
+        int cmpLo = lo.compareTo(node.key);
+        int cmpHi = hi.compareTo(node.key);
+        if (cmpLo < 0) this.keys(node.left, lo, hi, q);
+        if (cmpLo <= 0 && cmpHi >= 0) q.enqueue(node.key);
+        if (cmpHi > 0) this.keys(node.right, lo, hi, q);
     }
 }

@@ -66,6 +66,18 @@ public class Client {
             StdOut.println("size -> " + bst.size());
             StdOut.println("************");
         }
+        StdOut.println("------------------------------");
+        for (int i = 0; i < arr.length; i++) {
+            bst.put(arr[i], i);
+        }
+        for (String str : bst.keys()) {
+            StdOut.print(str + " ");
+        }
+        StdOut.println();
+        for (String str : bst.keys("E", "R")) {
+            StdOut.print(str + " ");
+        }
+        StdOut.println();
     }
 
     private static void printAll(String[] arr, BST<String, Integer> bst) {
