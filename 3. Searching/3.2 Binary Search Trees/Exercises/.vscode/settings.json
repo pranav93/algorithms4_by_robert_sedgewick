@@ -1,0 +1,8 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/home/pranav/algorithms4_by_robert_sedgewick/lib/**/*.jar"
+    ],
+    "java.checkstyle.configuration": "${workspaceFolder}/eclipse-formatter.xml",
+    "java.format.settings.url": "eclipse-formatter.xml"
+}
