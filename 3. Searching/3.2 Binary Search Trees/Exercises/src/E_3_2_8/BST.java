@@ -1,6 +1,7 @@
-package E_3_2_7;
+package E_3_2_8;
 
 import edu.princeton.cs.algs4.Queue;
+import edu.princeton.cs.algs4.StdRandom;
 
 public class BST<Key extends Comparable<Key>, Value> {
     class Node {
@@ -104,12 +105,18 @@ public class BST<Key extends Comparable<Key>, Value> {
         this.keys(node.right, q);
     }
 
-    public float avgCompares() {
+    public float optCompares(int N) {
         int compareSum = 0;
+        Key[] keys = (Key[]) new Comparable[this.size()];
+        int i = 0;
         for (Key k : this.keys()) {
-            compareSum += this.compares(k);
+            keys[i++] = k;
         }
-        return ((float) compareSum / this.size()) + 1;
+        for (int j = 0; j < N; j++) {
+            Key randKey = keys[StdRandom.uniform(0, this.size())];
+            compareSum += this.compares(randKey);
+        }
+        return ((float) compareSum / N) + 1;
     }
 
     private int compares(Key k) {
