@@ -23,6 +23,7 @@
             "request": "launch",
             "mainClass": "E_3_2_10.Client",
             "projectName": "Exercises_e13a7898",
+            "args": "S E A R C H E X A M P L E"
         },
         {
             "type": "java",

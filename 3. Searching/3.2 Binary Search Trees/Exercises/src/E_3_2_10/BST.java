@@ -171,4 +171,28 @@ public class BST<Key extends Comparable<Key>, Value> {
     public int size() {
         return this.size(this.root);
     }
+
+    public void deleteMin() {
+        if (this.root == null) return;
+        this.root = this.deleteMin(this.root);
+    }
+
+    private Node deleteMin(Node node) {
+        if (node.left == null) return node.right;
+        node.left = this.deleteMin(node.left);
+        node.N = 1 + size(node.left) + size(node.right);
+        return node;
+    }
+
+    public void deleteMax() {
+        if (this.root == null) return;
+        this.root = this.deleteMax(this.root);
+    }
+
+    private Node deleteMax(Node node) {
+        if (node.right == null) { return node.left; }
+        node.right = this.deleteMax(node.right);
+        node.N = 1 + this.size(node.left) + this.size(node.right);
+        return node;
+    }
 }
