@@ -57,5 +57,19 @@ public class Client {
         }
         StdOut.println("Max -> " + st.max());
 
+        for (int i = 0; i < args.length; i++) {
+            String key = args[i];
+            st.put(key, i);
+        }
+
+        for (String k : st.keys()) {
+            StdOut.println("size -> " + st.size());
+            StdOut.println("get " + k + " -> " + st.get(k));
+            StdOut.println("deleting " + k);
+            st.delete(k);
+            StdOut.println("get " + k + " -> " + st.get(k));
+            StdOut.println("------------");
+        }
+        StdOut.println("size -> " + st.size());
     }
 }

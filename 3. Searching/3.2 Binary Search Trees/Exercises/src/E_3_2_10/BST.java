@@ -195,4 +195,34 @@ public class BST<Key extends Comparable<Key>, Value> {
         node.N = 1 + this.size(node.left) + this.size(node.right);
         return node;
     }
+
+    public void delete(Key key) {
+        this.root = this.delete(this.root, key);
+    }
+
+    private Node delete(Node node, Key key) {
+        if (node == null) return null;
+        int cmp = key.compareTo(node.key);
+
+        if (cmp < 0)
+            node.left = this.delete(node.left, key);
+        else if (cmp > 0)
+            node.right = this.delete(node.right, key);
+        else {
+            if (this.size(node) == 1)
+                return null;
+            else if (node.left == null)
+                return node.right;
+            else if (node.right == null)
+                return node.left;
+            else {
+                Node succNode = this.min(node.right);
+                succNode.right = this.deleteMin(node.right);
+                succNode.left = node.left;
+                node = succNode;
+            }
+        }
+        node.N = 1 + this.size(node.left) + this.size(node.right);
+        return node;
+    }
 }
