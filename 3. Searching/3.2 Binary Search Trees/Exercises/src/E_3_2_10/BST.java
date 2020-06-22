@@ -67,9 +67,7 @@ public class BST<Key extends Comparable<Key>, Value> {
     }
 
     private Node min(Node node) {
-        if (node.left == null) {
-            return node;
-        }
+        if (node.left == null) { return node; }
         return this.min(node.left);
     }
 
@@ -80,9 +78,7 @@ public class BST<Key extends Comparable<Key>, Value> {
     }
 
     private Node max(Node node) {
-        if (node.right == null) {
-            return node;
-        }
+        if (node.right == null) { return node; }
         return this.max(node.right);
     }
 
@@ -93,9 +89,7 @@ public class BST<Key extends Comparable<Key>, Value> {
     }
 
     private void keys(Node node, Queue<Key> q) {
-        if (node == null) {
-            return;
-        }
+        if (node == null) { return; }
         this.keys(node.left, q);
         q.enqueue(node.key);
         this.keys(node.right, q);
@@ -142,5 +136,39 @@ public class BST<Key extends Comparable<Key>, Value> {
         } else {
             return this.ceiling(node.left, key);
         }
+    }
+
+    public Key select(int k) {
+        Node n = this.select(this.root, k);
+        if (n == null) { return null; }
+        return n.key;
+    }
+
+    private Node select(Node node, int k) {
+        if (node == null) return null;
+        int t = size(node.left);
+        if (t == k) { return node; }
+        if (k < t) return this.select(node.left, k);
+        k = k - 1 - t;
+        return this.select(node.right, k);
+    }
+
+    public int rank(Key key) {
+        return this.rank(this.root, key, 0);
+    }
+
+    private int rank(Node node, Key key, int k) {
+        if (node == null) return 0;
+        int cmp = key.compareTo(node.key);
+        if (cmp < 0) return this.rank(node.left, key, k);
+
+        int t = size(node.left);
+        k = k + 1 + t;
+        if (cmp == 0) return k;
+        return this.rank(node.right, key, k);
+    }
+
+    public int size() {
+        return this.size(this.root);
     }
 }
