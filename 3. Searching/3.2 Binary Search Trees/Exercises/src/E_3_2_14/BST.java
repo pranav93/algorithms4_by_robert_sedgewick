@@ -1,5 +1,6 @@
 package E_3_2_14;
 
+import edu.princeton.cs.algs4.Queue;
 import edu.princeton.cs.algs4.Stack;
 
 public class BST<Key extends Comparable<Key>, Value> {
@@ -62,7 +63,7 @@ public class BST<Key extends Comparable<Key>, Value> {
             }
         }
 
-        while (stackNode.isEmpty()) {
+        while (!stackNode.isEmpty()) {
             Node n = stackNode.pop();
             n.N = 1 + this.size(n.right) + this.size(n.left);
         }
@@ -142,4 +143,57 @@ public class BST<Key extends Comparable<Key>, Value> {
         }
         return null;
     }
+
+    public int rank(Key key) {
+        int k = 0;
+        Node node = this.root;
+        while (node != null) {
+            int cmp = key.compareTo(node.key);
+            if (cmp < 0) {
+                node = node.left;
+            } else if (cmp == 0) {
+                k = k + 1 + this.size(node.left);
+                return k;
+            } else {
+                k = k + 1 + this.size(node.left);
+                node = node.right;
+            }
+        }
+        return 0;
+    }
+
+    public int size() {
+        return this.size(this.root);
+    }
+
+    public Iterable<Key> keys() {
+        Queue<Key> q = new Queue<Key>();
+        this.keys(this.root, q);
+        return q;
+    }
+
+    private void keys(Node node, Queue<Key> q) {
+        if (node == null) return;
+        this.keys(node.left, q);
+        q.enqueue(node.key);
+        this.keys(node.right, q);
+    }
+
+    public Key select(int k) {
+        Node node = this.root;
+
+        while (node != null) {
+            int t = size(node.left);
+            if (k < t) {
+                node = node.left;
+            } else if (k > t) {
+                k = k - 1 - t;
+                node = node.right;
+            } else {
+                return node.key;
+            }
+        }
+        return null;
+    }
+
 }

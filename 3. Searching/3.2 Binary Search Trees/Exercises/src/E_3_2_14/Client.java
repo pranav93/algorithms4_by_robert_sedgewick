@@ -26,6 +26,17 @@ public class Client {
         for (int i = 0; i < strArr.length; i++) {
             StdOut.println("ceiling(" + strArr[i] + ") -> " + st.ceiling(strArr[i]));
         }
+
+        for (String k : st.keys()) {
+            StdOut.println("rank(" + k + ") -> " + st.rank(k));
+        }
+        StdOut.println("rank(" + "Z" + ") -> " + st.rank("Z"));
+
+        int sz = st.size();
+        for (int i = 0; i < sz; i++) {
+            StdOut.println("select(" + i + ") -> " + st.select(i));
+        }
+        StdOut.println("select(" + 11 + ") -> " + st.select(11));
     }
 
 }
