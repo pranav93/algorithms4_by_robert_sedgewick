@@ -8,6 +8,13 @@
             "type": "java",
             "name": "CodeLens (Launch) - Client",
             "request": "launch",
+            "mainClass": "E_3_2_21.Client",
+            "projectName": "Exercises_e13a7898"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Client",
+            "request": "launch",
             "mainClass": "E_3_2_14.Client",
             "projectName": "Exercises_e13a7898"
         },
