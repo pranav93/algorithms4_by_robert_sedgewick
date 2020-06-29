@@ -1,0 +1,36 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<Examples_5dcdbf52>",
+            "request": "launch",
+            "mainClass": "RedBlackBST.Client",
+            "projectName": "Examples_5dcdbf52"
+        },
+        {
+            "type": "java",
+            "name": "Debug RedBlackBSTPrintable",
+            "request": "launch",
+            "mainClass": "RedBlackBSTPrintable.Client",
+            "projectName": "Examples_5dcdbf52",
+            "console": "externalTerminal"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<Examples_5dcdbf52>(2)",
+            "request": "launch",
+            "mainClass": "TopDown234Trees.Client",
+            "projectName": "Examples_5dcdbf52"
+        }
+    ]
+}
