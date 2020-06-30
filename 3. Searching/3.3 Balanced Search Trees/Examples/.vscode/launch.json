@@ -24,6 +24,7 @@
             "mainClass": "RedBlackBSTPrintable.Client",
             "projectName": "Examples_5dcdbf52",
             "console": "externalTerminal"
+            // "args": "> output.txt"
         },
         {
             "type": "java",

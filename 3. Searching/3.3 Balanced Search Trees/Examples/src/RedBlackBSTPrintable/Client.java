@@ -9,11 +9,17 @@ public class Client {
 
         String[] strArray = "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z".split(" ");
         for (int i = 0; i < strArray.length; i++) {
-            StdOut.println("Inserting " + strArray[i]);
-            bst.put(strArray[i], i);
-            TreePrinter.print(bst.root);
-            StdOut.println("====================================================================================================================");
+            // StdOut.println("Inserting " + strArray[i]);
+            bst.put(strArray[i], i, false);
+            // TreePrinter.print(bst.root);
+            // StdOut.println("====================================================================================================================");
         }
-        StdOut.println("Debug here");
+        StdOut.println("Insertion done");
+        TreePrinter.print(bst.root);
+        StdOut.println(
+                "====================================================================================================================");
+        StdOut.println("Deleting min");
+        bst.deleteMin(false);
+        TreePrinter.print(bst.root);
     }
 }
