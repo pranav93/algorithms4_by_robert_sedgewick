@@ -166,6 +166,9 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
     }
 
     public void deleteMin(boolean print) {
+        if (this.root == null) {
+            return;
+        }
         this.root = this.deleteMin(this.root, print);
         if (this.isRed(this.root)) {
             this.root.color = BLACK;
@@ -174,17 +177,36 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
 
     private Node deleteMin(Node node, boolean print) {
         if (node.left == null) {
+            StdOut.print("Deleted " + node.key);
             return null;
         }
 
         if (!this.isRed(node.left) && !this.isRed(node.left.left)) {
-            StdOut.println("Child and grandchild of node with key " + node.key + " are black");
-            StdOut.println("Moving red to left");
+            if (print) {
+                StdOut.println("----");
+                StdOut.println("Child and grandchild of node with key " + node.key + " are black");
+                StdOut.println("Moving red to left");
+            }
             node = this.moveRedLeft(node, print);
+            if (print) {
+                StdOut.println("Now entire tree is");
+                TreePrinter.print(root);
+                StdOut.println("----");
+            }
         }
 
         node.left = this.deleteMin(node.left, print);
+        if (print) {
+            StdOut.println("----");
+            StdOut.println("Fixing up tree with key " + node.key + " at root");
+        }
         node = this.fixup(node, print);
+        if (print) {
+            StdOut.println("Fixing up done, node is yet to be returned to callee");
+            StdOut.println("Now entire tree looks like");
+            TreePrinter.print(root);
+            StdOut.println("----");
+        }
         return node;
     }
 
@@ -208,8 +230,8 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         this.flipColors(node, print);
         if (print) {
             StdOut.println("Flipping colors done");
+            TreePrinter.print(node);
         }
-        TreePrinter.print(node);
         if (this.isRed(node.right.left)) {
             if (print) {
                 StdOut.println("node with key " + node.key + " has two consecutive red children on right");
@@ -217,7 +239,9 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
             node.right = this.rotateRight(node.right, print);
             node = this.rotateLeft(node, print);
             this.flipColors(node, print);
-            TreePrinter.print(node);
+            if (print) {
+                TreePrinter.print(node);
+            }
         }
         return node;
     }
