@@ -14,12 +14,17 @@ public class Client {
         StdOut.println("Insertion done");
         TreePrinter.print(bst.root);
         StdOut.println("*******************************************************************");
-        for (int i = 0; i < 14; i++) {
-            StdOut.println("Deleting min");
-            bst.deleteMin(false);
+        // for (int i = 0; i < 14; i++) {
+        // StdOut.println("Deleting min");
+        // bst.deleteMin(false);
+        // TreePrinter.print(bst.root);
+        // StdOut.println("*******************************************************************");
+        // }
+        for (int i = 0; i < 15; i++) {
+            StdOut.println("Deleting max");
+            bst.deleteMax(true);
             TreePrinter.print(bst.root);
             StdOut.println("*******************************************************************");
-
         }
     }
 }

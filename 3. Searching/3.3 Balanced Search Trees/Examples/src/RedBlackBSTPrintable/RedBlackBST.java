@@ -175,10 +175,91 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         }
     }
 
+    public void deleteMax(boolean print) {
+        if (this.root == null) {
+            return;
+        }
+        this.root = this.deleteMax(this.root, print);
+        if (this.isRed(this.root)) {
+            this.root.color = BLACK;
+        }
+    }
+
+    private Node deleteMax(Node node, boolean print) {
+        if (this.isRed(node.left)) {
+            if (print) {
+                StdOut.println("----");
+                StdOut.println("Left child of node with key " + node.key + " is red");
+                StdOut.println("Rotating red to right");
+            }
+            node = this.rotateRight(node, print);
+            if (print) {
+                StdOut.println("Now entire tree is");
+                TreePrinter.print(root);
+                StdOut.println("----");
+            }
+        }
+
+        if (node.right == null) {
+            StdOut.println("Deleted " + node.key);
+            return node.left;
+        }
+
+        if (!this.isRed(node.right) && !this.isRed(node.right.left)) {
+            if (print) {
+                StdOut.println("----");
+                StdOut.println("Child and grandchild [right] of node with key " + node.key + " are black");
+                StdOut.println("Moving red to right");
+            }
+            node = this.moveRedRight(node, print);
+            if (print) {
+                StdOut.println("Now entire tree is");
+                TreePrinter.print(root);
+                StdOut.println("----");
+            }
+        }
+
+        node.right = this.deleteMax(node.right, print);
+        if (print) {
+            StdOut.println("----");
+            StdOut.println("Fixing up tree with key " + node.key + " at root");
+        }
+        node = this.fixup(node, print);
+        if (print) {
+            StdOut.println("Fixing up done, node is yet to be returned to callee");
+            StdOut.println("Now entire tree looks like");
+            TreePrinter.print(root);
+            StdOut.println("----");
+        }
+        return node;
+    }
+
+    private Node moveRedRight(Node node, boolean print) {
+        if (print) {
+            StdOut.println("Inside moveRedRight. Flipping colors");
+        }
+        this.flipColors(node, print);
+        if (print) {
+            StdOut.println("Flipping colors done");
+            TreePrinter.print(node);
+        }
+        if (this.isRed(node.left) && this.isRed(node.left.left)) {
+            if (print) {
+                StdOut.println("node with key " + node.key + " has two consecutive red children on left");
+            }
+            node = this.rotateRight(node, print);
+            this.flipColors(node, print);
+            if (print) {
+                TreePrinter.print(node);
+            }
+        }
+        return node;
+    }
+
     private Node deleteMin(Node node, boolean print) {
         if (node.left == null) {
             StdOut.print("Deleted " + node.key);
-            return null;
+            return node.right;
         }
 
         if (!this.isRed(node.left) && !this.isRed(node.left.left)) {
