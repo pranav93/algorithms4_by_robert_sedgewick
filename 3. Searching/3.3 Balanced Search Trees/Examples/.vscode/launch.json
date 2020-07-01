@@ -8,6 +8,13 @@
             "type": "java",
             "name": "CodeLens (Launch) - Client",
             "request": "launch",
+            "mainClass": "LLRedBlackBSTPrintable.Client",
+            "projectName": "Examples_5dcdbf52"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Client",
+            "request": "launch",
             "mainClass": "LLRedBlackBST.Client",
             "projectName": "Examples_5dcdbf52"
         },
