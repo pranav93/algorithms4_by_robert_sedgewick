@@ -160,4 +160,53 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
 
         return node;
     }
+
+    public Key max() {
+        Node maxNode = this.max(this.root);
+        if (maxNode == null) {
+            return null;
+        }
+        return maxNode.key;
+    }
+
+    private Node max(Node node) {
+        if (node == null) {
+            return null;
+        }
+        if (node.right == null) {
+            return node;
+        }
+        return this.max(node.right);
+    }
+
+    public void deleteMax() {
+        this.root = this.deleteMax(this.root);
+    }
+
+    private Node deleteMax(Node node) {
+        if (this.isRed(node.left)) {
+            node = this.rotateRight(node);
+        }
+
+        if (node.right == null) {
+            return node.left;
+        }
+
+        if (!this.isRed(node.right) && !this.isRed(node.right.left)) {
+            node = this.moveRedRight(node);
+        }
+
+        node.right = this.deleteMax(node.right);
+        node = this.fixup(node);
+        return node;
+    }
+
+    private Node moveRedRight(Node node) {
+        this.flipColors(node);
+        if (this.isRed(node.left) && this.isRed(node.left.left)) {
+            node = this.rotateRight(node);
+            this.flipColors(node);
+        }
+        return node;
+    }
 }

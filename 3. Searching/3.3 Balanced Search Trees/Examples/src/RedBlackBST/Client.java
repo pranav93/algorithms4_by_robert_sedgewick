@@ -11,13 +11,22 @@ public class Client {
             bst.put(strArray[i], i);
         }
 
-        StdOut.println("Debug here");
-
         for (int i = 0; i < strArray.length; i++) {
             StdOut.println("Min -> " + bst.min());
             StdOut.println("Deleting Min");
             bst.deleteMin();
         }
         StdOut.println("Min -> " + bst.min());
+
+        for (int i = 0; i < strArray.length; i++) {
+            bst.put(strArray[i], i);
+        }
+
+        for (int i = 0; i < strArray.length; i++) {
+            StdOut.println("Max -> " + bst.max());
+            StdOut.println("Deleting Max");
+            bst.deleteMax();
+        }
+        StdOut.println("Max -> " + bst.max());
     }
 }
