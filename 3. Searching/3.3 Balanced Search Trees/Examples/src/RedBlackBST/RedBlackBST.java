@@ -59,9 +59,9 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
     }
 
     private void flipColors(Node h) {
-        h.left.color = BLACK;
-        h.right.color = BLACK;
-        h.color = RED;
+        h.left.color = !h.left.color;
+        h.right.color = !h.right.color;
+        h.color = !h.color;
     }
 
     private Node rotateRight(Node h) {
@@ -98,5 +98,66 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
             return false;
         }
         return node.color;
+    }
+
+    public Key min() {
+        Node minNode = this.min(this.root);
+        if (minNode == null) {
+            return null;
+        }
+        return minNode.key;
+    }
+
+    private Node min(Node node) {
+        if (node == null) {
+            return null;
+        }
+        if (node.left == null) {
+            return node;
+        }
+        return this.min(node.left);
+    }
+
+    public void deleteMin() {
+        this.root = this.deleteMin(this.root);
+    }
+
+    private Node deleteMin(Node node) {
+        if (node.left == null) {
+            return null;
+        }
+
+        if (!this.isRed(node.left) && !this.isRed(node.left.left)) {
+            node = this.moveRedLeft(node);
+        }
+
+        node.left = this.deleteMin(node.left);
+        node = this.fixup(node);
+        return node;
+    }
+
+    private Node fixup(Node node) {
+        if (this.isRed(node.right) && !this.isRed(node.left)) {
+            node = this.rotateLeft(node);
+        }
+        if (this.isRed(node.left) && this.isRed(node.left.left)) {
+            node = this.rotateRight(node);
+        }
+        if (this.isRed(node.left) && this.isRed(node.right)) {
+            this.flipColors(node);
+        }
+        return node;
+    }
+
+    private Node moveRedLeft(Node node) {
+        this.flipColors(node);
+
+        if (this.isRed(node.right.left)) {
+            node.right = this.rotateRight(node.right);
+            node = this.rotateLeft(node);
+            this.flipColors(node);
+        }
+
+        return node;
     }
 }

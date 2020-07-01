@@ -12,5 +12,12 @@ public class Client {
         }
 
         StdOut.println("Debug here");
+
+        for (int i = 0; i < strArray.length; i++) {
+            StdOut.println("Min -> " + bst.min());
+            StdOut.println("Deleting Min");
+            bst.deleteMin();
+        }
+        StdOut.println("Min -> " + bst.min());
     }
 }
