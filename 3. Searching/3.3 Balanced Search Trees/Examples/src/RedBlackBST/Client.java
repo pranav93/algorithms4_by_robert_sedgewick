@@ -28,5 +28,15 @@ public class Client {
             bst.deleteMax();
         }
         StdOut.println("Max -> " + bst.max());
+
+        for (int i = 0; i < strArray.length; i++) {
+            bst.put(strArray[i], i);
+        }
+
+        String[] deleteStr = new String[] { "P", "X", "R", "C", "S", "H", "M", "E", "L", "A" };
+        for (int i = 0; i < deleteStr.length; i++) {
+            String str = deleteStr[i];
+            bst.delete(str);
+        }
     }
 }

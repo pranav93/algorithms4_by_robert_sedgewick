@@ -7,7 +7,7 @@ public class Client {
     public static void main(String[] args) {
         RedBlackBST<String, Integer> bst = new RedBlackBST<String, Integer>();
 
-        String[] strArray = "A B C D E F G H I J K L M N".split(" ");
+        String[] strArray = "S E A R C H E X A M P L E".split(" ");
         for (int i = 0; i < strArray.length; i++) {
             bst.put(strArray[i], i, false);
         }
@@ -20,11 +20,24 @@ public class Client {
         // TreePrinter.print(bst.root);
         // StdOut.println("*******************************************************************");
         // }
-        for (int i = 0; i < 15; i++) {
-            StdOut.println("Deleting max");
-            bst.deleteMax(true);
+        // for (int i = 0; i < 15; i++) {
+        // StdOut.println("Deleting max");
+        // bst.deleteMax(true);
+        // TreePrinter.print(bst.root);
+        // StdOut.println("*******************************************************************");
+        // }
+        String[] deleteStr = new String[] { "P", "X", "R", "C", "S", "H", "M", "E", "L", "A" };
+        // String[] deleteStr = new String[] { "P", "X", "R" };
+        for (int i = 0; i < deleteStr.length; i++) {
+            String str = deleteStr[i];
+            bst.delete(str);
             TreePrinter.print(bst.root);
+            StdOut.println("Deleted -> " + str);
             StdOut.println("*******************************************************************");
         }
+
+        // bst.delete("C");
+        // TreePrinter.print(bst.root);
+        // StdOut.println("*******************************************************************");
     }
 }

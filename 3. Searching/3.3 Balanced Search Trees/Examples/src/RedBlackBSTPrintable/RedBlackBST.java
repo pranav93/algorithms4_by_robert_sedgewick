@@ -109,9 +109,17 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         if (print) {
             TreePrinter.print(h);
         }
-        h.color = !h.color;
-        h.left.color = !h.left.color;
-        h.right.color = !h.right.color;
+        if (h != null) {
+            h.color = !h.color;
+        } else {
+            return;
+        }
+        if (h.left != null) {
+            h.left.color = !h.left.color;
+        }
+        if (h.right != null) {
+            h.right.color = !h.right.color;
+        }
         if (print) {
             TreePrinter.print(h);
         }
@@ -326,4 +334,67 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         }
         return node;
     }
+
+    public void delete(Key key) {
+        this.root = this.delete(this.root, key);
+        if (this.isRed(this.root)) {
+            this.root.color = BLACK;
+        }
+    }
+
+    private Node delete(Node node, Key key) {
+        if (node == null) {
+            return node;
+        }
+
+        int cmp = key.compareTo(node.key);
+        if (cmp < 0) {
+            if (!this.isRed(node.left) && !this.isRed(node.left.left)) {
+                node = this.moveRedLeft(node, false);
+            }
+            node.left = this.delete(node.left, key);
+        } else if (cmp > 0) {
+            if (this.isRed(node.left)) {
+                node = this.rotateRight(node, false);
+            }
+            if (!this.isRed(node.right) && !this.isRed(node.right.left)) {
+                node = this.moveRedRight(node, false);
+            }
+            node.right = this.delete(node.right, key);
+        } else {
+            if (node.right == null && node.left == null) {
+                return null;
+            } else if (node.right == null && node.left != null) {
+                Node nodeToDelete = node;
+                node = node.left;
+                node.color = nodeToDelete.color;
+            } else {
+                Node minNode = this.min(node.right);
+                node.key = minNode.key;
+                node.value = minNode.value;
+                node.right = this.deleteMin(node.right, false);
+            }
+        }
+
+        return this.fixup(node, false);
+    }
+
+    public Key min() {
+        Node minNode = this.min(this.root);
+        if (minNode == null) {
+            return null;
+        }
+        return minNode.key;
+    }
+
+    private Node min(Node node) {
+        if (node == null) {
+            return null;
+        }
+        if (node.left == null) {
+            return node;
+        }
+        return this.min(node.left);
+    }
+
 }

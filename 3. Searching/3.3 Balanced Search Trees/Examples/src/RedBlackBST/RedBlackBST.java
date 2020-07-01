@@ -59,9 +59,17 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
     }
 
     private void flipColors(Node h) {
-        h.left.color = !h.left.color;
-        h.right.color = !h.right.color;
-        h.color = !h.color;
+        if (h != null) {
+            h.color = !h.color;
+        } else {
+            return;
+        }
+        if (h.left != null) {
+            h.left.color = !h.left.color;
+        }
+        if (h.right != null) {
+            h.right.color = !h.right.color;
+        }
     }
 
     private Node rotateRight(Node h) {
@@ -209,4 +217,46 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         }
         return node;
     }
+
+    public void delete(Key key) {
+        this.root = this.delete(this.root, key);
+    }
+
+    private Node delete(Node node, Key key) {
+        if (node == null) {
+            return node;
+        }
+
+        int cmp = key.compareTo(node.key);
+        if (cmp < 0) {
+            if (!this.isRed(node.left) && !this.isRed(node.left.left)) {
+                node = this.moveRedLeft(node);
+            }
+            node.left = this.delete(node.left, key);
+        } else if (cmp > 0) {
+            if (this.isRed(node.left)) {
+                node = this.rotateRight(node);
+            }
+            if (!this.isRed(node.right) && !this.isRed(node.right.left)) {
+                node = this.moveRedRight(node);
+            }
+            node.right = this.delete(node.right, key);
+        } else {
+            if (node.right == null && node.left == null) {
+                return null;
+            } else if (node.right == null && node.left != null) {
+                Node nodeToDelete = node;
+                node = node.left;
+                node.color = nodeToDelete.color;
+            } else {
+                Node minNode = this.min(node.right);
+                node.key = minNode.key;
+                node.value = minNode.value;
+                node.right = this.deleteMin(node.right);
+            }
+        }
+
+        return this.fixup(node);
+    }
+
 }
