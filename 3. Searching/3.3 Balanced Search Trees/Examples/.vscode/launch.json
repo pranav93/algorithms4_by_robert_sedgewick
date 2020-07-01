@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Client",
+            "request": "launch",
+            "mainClass": "LLRedBlackBST.Client",
+            "projectName": "Examples_5dcdbf52"
+        },
+        {
+            "type": "java",
             "name": "Debug (Launch) - Current File",
             "request": "launch",
             "mainClass": "${file}"
@@ -24,7 +31,6 @@
             "mainClass": "RedBlackBSTPrintable.Client",
             "projectName": "Examples_5dcdbf52",
             "console": "externalTerminal"
-            // "args": "> output.txt"
         },
         {
             "type": "java",
