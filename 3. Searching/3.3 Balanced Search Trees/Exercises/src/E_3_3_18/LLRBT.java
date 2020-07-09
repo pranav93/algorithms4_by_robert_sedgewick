@@ -354,4 +354,40 @@ public class LLRBT<Key extends Comparable<Key>, Value> {
         return node.key;
     }
 
+    public Key select(int k) {
+        return this.select(this.root, k);
+    }
+
+    private Key select(Node node, int k) {
+        if (node == null) {
+            return null;
+        }
+        int t = 1 + this.size(node.left);
+        if (k == t) {
+            return node.key;
+        }
+        if (k < t) {
+            return this.select(node.left, k);
+        }
+        return this.select(node.right, k - t);
+    }
+
+    public int rank(Key key) {
+        return this.rank(this.root, key, 0);
+    }
+
+    private int rank(Node node, Key key, int k) {
+        if (node == null) {
+            return 0;
+        }
+        int cmp = key.compareTo(node.key);
+        if (cmp < 0) {
+            return this.rank(node.left, key, k);
+        }
+        k = 1 + k + this.size(node.left);
+        if (cmp > 0) {
+            return this.rank(node.right, key, k);
+        }
+        return k;
+    }
 }
