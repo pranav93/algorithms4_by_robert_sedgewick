@@ -41,4 +41,11 @@ public class SeparateChainingHashST<Key, Value> {
         }
         return qKeys;
     }
+
+	public void delete(Key key) {
+        boolean deleted = this.st[this.hash(key)].delete(key);
+        if (deleted) {
+            this.N--;
+        }
+	}
 }

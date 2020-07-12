@@ -13,7 +13,26 @@ public class Client {
         StdOut.println("Debug here");
 
         for (String str : st.keys()) {
-            StdOut.println(str + " -> " + st.get(str));
+            StdOut.print(str + " -> " + st.get(str) + " |");
         }
+        StdOut.println();
+
+        st.delete("R");
+        for (String str : st.keys()) {
+            StdOut.print(str + " -> " + st.get(str) + " |");
+        }
+        StdOut.println();
+
+        st.delete("S");
+        for (String str : st.keys()) {
+            StdOut.print(str + " -> " + st.get(str) + " |");
+        }
+        StdOut.println();
+
+        st.delete("E");
+        for (String str : st.keys()) {
+            StdOut.print(str + " -> " + st.get(str) + " |");
+        }
+        StdOut.println();
     }
 }

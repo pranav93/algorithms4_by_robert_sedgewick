@@ -49,9 +49,27 @@ public class SequentialSearchST<Key, Value> {
         return this.N;
     }
 
-	public void keys(Queue<Key> qKeys) {
+    public void keys(Queue<Key> qKeys) {
         for (Node i = this.first; i != null; i = i.next) {
             qKeys.enqueue(i.key);
         }
+    }
+
+    public boolean delete(Key key) {
+        Node prev = null;
+        for (Node i = this.first; i != null; prev = i, i = i.next) {
+            if (key.equals(i.key)) {
+                if (prev == null) {
+                    this.first = this.first.next;
+                    this.N--;
+                    return true;
+                }
+                prev.next = i.next;
+                i.next = null;
+                this.N--;
+                return true;
+            }
+        }
+        return false;
     }
 }
