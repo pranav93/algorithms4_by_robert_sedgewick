@@ -54,7 +54,7 @@ public class LinProbeHash<Key, Value> {
     }
 
     private int hash(Key key) {
-        return (this.keys.hashCode() & 0xfffffff) % this.M;
+        return (this.keys.hashCode() & 0x7fffffff) % this.M;
     }
 
     public Value get(Key key) {
