@@ -1,0 +1,71 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<Exercises_8ec7d555>",
+            "request": "launch",
+            "mainClass": "E_3_4_1.Client",
+            "projectName": "Exercises_8ec7d555"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<Exercises_8ec7d555>(1)",
+            "request": "launch",
+            "mainClass": "E_3_4_10.Client",
+            "projectName": "Exercises_8ec7d555"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<Exercises_8ec7d555>(2)",
+            "request": "launch",
+            "mainClass": "E_3_4_11.Client",
+            "projectName": "Exercises_8ec7d555"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<Exercises_8ec7d555>(3)",
+            "request": "launch",
+            "mainClass": "E_3_4_18.Client",
+            "projectName": "Exercises_8ec7d555"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<Exercises_8ec7d555>(4)",
+            "request": "launch",
+            "mainClass": "E_3_4_2.Client",
+            "projectName": "Exercises_8ec7d555"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<Exercises_8ec7d555>(5)",
+            "request": "launch",
+            "mainClass": "E_3_4_20.Client",
+            "projectName": "Exercises_8ec7d555",
+            "args": "< src/E_3_4_20/tale.txt"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<Exercises_8ec7d555>(6)",
+            "request": "launch",
+            "mainClass": "E_3_4_3.Client",
+            "projectName": "Exercises_8ec7d555"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<Exercises_8ec7d555>(7)",
+            "request": "launch",
+            "mainClass": "E_3_4_4.Client",
+            "projectName": "Exercises_8ec7d555"
+        }
+    ]
+}
