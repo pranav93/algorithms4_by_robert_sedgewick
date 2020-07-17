@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Client",
+            "request": "launch",
+            "mainClass": "SparseVector.Client",
+            "projectName": "Examples_b37b9f28"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - FileIndex",
             "request": "launch",
             "mainClass": "FileIndex.FileIndex",
