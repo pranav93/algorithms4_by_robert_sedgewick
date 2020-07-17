@@ -6,6 +6,14 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - FileIndex",
+            "request": "launch",
+            "mainClass": "FileIndex.FileIndex",
+            "projectName": "Examples_b37b9f28",
+            "args": "src/ex*.txt"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - LookupIndex",
             "request": "launch",
             "mainClass": "InvIndex.LookupIndex",
