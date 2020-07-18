@@ -15,5 +15,19 @@ public class Client {
             StdOut.print("\t" + string);
         }
         StdOut.println();
+        for (String string : set.keys()) {
+            StdOut.println("contains " + string + " -> " + set.contains(string));
+        }
+        StdOut.println();
+        StdOut.println("size -> " + set.size());
+
+        set.remove("A");
+        set.remove("H");
+        for (String string : set.keys()) {
+            StdOut.print("\t" + string);
+        }
+        StdOut.println();
+        StdOut.println("size -> " + set.size());
+        StdOut.println("Z -> " + set.contains("Z"));
     }
 }
