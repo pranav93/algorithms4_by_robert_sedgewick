@@ -1,18 +1,20 @@
-package LLRedBlackBST;
+package E_3_5_5.STint;
 
-public class RedBlackBST<Key extends Comparable<Key>, Value> {
+import edu.princeton.cs.algs4.Queue;
+
+public class STint {
 
     private static final boolean RED = true;
     private static final boolean BLACK = false;
 
     public class Node {
-        Key key;
-        Value value;
+        int key;
+        int value;
         int N;
         Node left, right;
         boolean color;
 
-        Node(Key key, Value value, int N) {
+        Node(int key, int value, int N) {
             this.key = key;
             this.value = value;
             this.N = 1;
@@ -22,19 +24,19 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
 
     Node root;
 
-    public void put(Key key, Value value) {
+    public void put(int key, int value) {
         this.root = this.put(this.root, key, value);
         if (this.root.color == RED) {
             this.root.color = BLACK;
         }
     }
 
-    private Node put(Node node, Key key, Value value) {
+    private Node put(Node node, int key, int value) {
         if (node == null) {
             return new Node(key, value, 1);
         }
 
-        int cmp = key.compareTo(node.key);
+        int cmp = key - node.key;
 
         if (cmp < 0) {
             node.left = this.put(node.left, key, value);
@@ -108,10 +110,10 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         return node.color;
     }
 
-    public Key min() {
+    public int min() {
         Node minNode = this.min(this.root);
         if (minNode == null) {
-            return null;
+            return 0;
         }
         return minNode.key;
     }
@@ -169,10 +171,10 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         return node;
     }
 
-    public Key max() {
+    public int max() {
         Node maxNode = this.max(this.root);
         if (maxNode == null) {
-            return null;
+            return 0;
         }
         return maxNode.key;
     }
@@ -218,21 +220,21 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         return node;
     }
 
-    public void delete(Key key) {
-        this.root = this.delete(this.root, key);
+    public void remove(int key) {
+        this.root = this.remove(this.root, key);
     }
 
-    private Node delete(Node node, Key key) {
+    private Node remove(Node node, int key) {
         if (node == null) {
             return node;
         }
 
-        int cmp = key.compareTo(node.key);
+        int cmp = key - node.key;
         if (cmp < 0) {
             if (!this.isRed(node.left) && !this.isRed(node.left.left)) {
                 node = this.moveRedLeft(node);
             }
-            node.left = this.delete(node.left, key);
+            node.left = this.remove(node.left, key);
         } else if (cmp > 0) {
             if (this.isRed(node.left)) {
                 node = this.rotateRight(node);
@@ -240,7 +242,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
             if (!this.isRed(node.right) && !this.isRed(node.right.left)) {
                 node = this.moveRedRight(node);
             }
-            node.right = this.delete(node.right, key);
+            node.right = this.remove(node.right, key);
         } else {
             if (node.right == null && node.left == null) {
                 return null;
@@ -259,4 +261,58 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         return this.fixup(node);
     }
 
+    public Iterable<Integer> keys() {
+        Queue<Integer> q = new Queue<Integer>();
+        this.keys(this.root, q);
+        return q;
+    }
+
+    private void keys(Node node, Queue<Integer> q) {
+        if (node == null) {
+            return;
+        }
+        this.keys(node.left, q);
+        q.enqueue(node.key);
+        this.keys(node.right, q);
+    }
+
+    public boolean contains(int key) {
+        return this.contains(this.root, key);
+    }
+
+    private boolean contains(Node node, int key) {
+        if (node == null) {
+            return false;
+        }
+        int cmp = key - node.key;
+        if (cmp < 0) {
+            return this.contains(node.left, key);
+        } else if (cmp > 0) {
+            return this.contains(node.right, key);
+        } else {
+            return true;
+        }
+    }
+
+    public int size() {
+        return this.size(this.root);
+    }
+
+    public int get(int key) {
+        return this.get(this.root, key);
+    }
+
+    private int get(Node node, int key) {
+        if (node == null) {
+            return 0;
+        }
+        int cmp = key - node.key;
+        if (cmp < 0) {
+            return this.get(node.left, key);
+        } else if (cmp > 0) {
+            return this.get(node.right, key);
+        } else {
+            return node.value;
+        }
+    }
 }
