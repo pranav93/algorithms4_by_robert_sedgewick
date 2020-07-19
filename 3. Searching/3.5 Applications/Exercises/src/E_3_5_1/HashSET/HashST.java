@@ -1,7 +1,6 @@
 package E_3_5_1.HashSET;
 
 import edu.princeton.cs.algs4.Queue;
-import edu.princeton.cs.algs4.StdOut;
 
 public class HashST<Key, Value> {
     Key[] keys;
