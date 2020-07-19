@@ -1,23 +1,23 @@
-package E_3_5_4.HashSTint;
+package E_3_5_6.HashSETdouble;
 
 import edu.princeton.cs.algs4.Queue;
 
-public class HashSTint {
-    int[] keys;
+public class HashSTdouble {
+    double[] keys;
     int M;
     int N;
 
-    HashSTint() {
+    HashSTdouble() {
         this.M = 4;
-        this.keys = new int[this.M];
+        this.keys = new double[this.M];
     }
 
-    HashSTint(int size) {
+    HashSTdouble(int size) {
         this.M = size;
-        this.keys = new int[this.M];
+        this.keys = new double[this.M];
     }
 
-    public void add(int key) {
+    public void add(double key) {
         if (key == 0) {
             throw new IllegalArgumentException("Value 0 not allowed");
         }
@@ -36,7 +36,7 @@ public class HashSTint {
     }
 
     private void resize(int newSize) {
-        HashSTint t = new HashSTint(newSize);
+        HashSTdouble t = new HashSTdouble(newSize);
         for (int i = 0; i < this.M; i++) {
             if (this.keys[i] != 0) {
                 t.add(this.keys[i]);
@@ -46,12 +46,12 @@ public class HashSTint {
         this.M = t.M;
     }
 
-    private int hash(int key) {
-        return (Integer.valueOf(key).hashCode() & 0x7fffffff) % this.M;
+    private int hash(double key) {
+        return (Double.valueOf(key).hashCode() & 0x7fffffff) % this.M;
     }
 
-    public Iterable<Integer> keys() {
-        Queue<Integer> qKeys = new Queue<Integer>();
+    public Iterable<Double> keys() {
+        Queue<Double> qKeys = new Queue<Double>();
         for (int i = 0; i < this.M; i++) {
             if (this.keys[i] != 0) {
                 qKeys.enqueue(this.keys[i]);
@@ -60,7 +60,7 @@ public class HashSTint {
         return qKeys;
     }
 
-    public boolean contains(int key) {
+    public boolean contains(double key) {
         for (int i = this.hash(key); this.keys[i] != 0; i = (i + 1) % this.M) {
             if (this.keys[i] == key) {
                 return true;
@@ -69,11 +69,11 @@ public class HashSTint {
         return false;
     }
 
-	public int size() {
-		return this.N;
-	}
+    public int size() {
+        return this.N;
+    }
 
-	public void remove(int key) {
+    public void remove(double key) {
         int i;
         for (i = this.hash(key); this.keys[i] != 0; i = (i + 1) % this.M) {
             if (this.keys[i] == key) {
@@ -87,7 +87,7 @@ public class HashSTint {
         this.N--;
         i++;
         while (this.keys[i] != 0) {
-            int temp = this.keys[i];
+            double temp = this.keys[i];
             this.keys[i] = 0;
             this.N--;
             this.add(temp);
@@ -96,5 +96,5 @@ public class HashSTint {
         if (this.N == this.M / 8) {
             this.resize(this.M / 2);
         }
-	}
+    }
 }
