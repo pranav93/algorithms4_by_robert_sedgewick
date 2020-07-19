@@ -2,17 +2,17 @@ package E_3_5_6.HashSETint;
 
 import edu.princeton.cs.algs4.Queue;
 
-public class HashSTint {
+public class HashSETint {
     int[] keys;
     int M;
     int N;
 
-    HashSTint() {
+    HashSETint() {
         this.M = 4;
         this.keys = new int[this.M];
     }
 
-    HashSTint(int size) {
+    HashSETint(int size) {
         this.M = size;
         this.keys = new int[this.M];
     }
@@ -36,7 +36,7 @@ public class HashSTint {
     }
 
     private void resize(int newSize) {
-        HashSTint t = new HashSTint(newSize);
+        HashSETint t = new HashSETint(newSize);
         for (int i = 0; i < this.M; i++) {
             if (this.keys[i] != 0) {
                 t.add(this.keys[i]);

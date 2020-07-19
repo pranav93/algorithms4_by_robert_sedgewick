@@ -2,17 +2,17 @@ package E_3_5_6.HashSETdouble;
 
 import edu.princeton.cs.algs4.Queue;
 
-public class HashSTdouble {
+public class HashSETdouble {
     double[] keys;
     int M;
     int N;
 
-    HashSTdouble() {
+    HashSETdouble() {
         this.M = 4;
         this.keys = new double[this.M];
     }
 
-    HashSTdouble(int size) {
+    HashSETdouble(int size) {
         this.M = size;
         this.keys = new double[this.M];
     }
@@ -36,7 +36,7 @@ public class HashSTdouble {
     }
 
     private void resize(int newSize) {
-        HashSTdouble t = new HashSTdouble(newSize);
+        HashSETdouble t = new HashSETdouble(newSize);
         for (int i = 0; i < this.M; i++) {
             if (this.keys[i] != 0) {
                 t.add(this.keys[i]);

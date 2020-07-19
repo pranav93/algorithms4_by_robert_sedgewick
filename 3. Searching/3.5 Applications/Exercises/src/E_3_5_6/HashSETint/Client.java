@@ -5,7 +5,7 @@ import edu.princeton.cs.algs4.StdOut;
 public class Client {
     public static void main(String[] args) {
         int[] strArr = new int[] { 11, 22, 33, 44, 55, 66, 77, 88, 99, 100 };
-        HashSTint set = new HashSTint();
+        HashSETint set = new HashSETint();
 
         for (int i = 0; i < strArr.length; i++) {
             set.add(strArr[i]);
