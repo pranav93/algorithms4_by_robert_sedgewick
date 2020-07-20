@@ -85,7 +85,7 @@ public class HashSETint {
         }
         this.keys[i] = 0;
         this.N--;
-        i++;
+        i = (i + 1) % this.M;
         while (this.keys[i] != 0) {
             int temp = this.keys[i];
             this.keys[i] = 0;

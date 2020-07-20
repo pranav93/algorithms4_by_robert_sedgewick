@@ -85,7 +85,7 @@ public class HashSETdouble {
         }
         this.keys[i] = 0;
         this.N--;
-        i++;
+        i = (i + 1) % this.M;
         while (this.keys[i] != 0) {
             double temp = this.keys[i];
             this.keys[i] = 0;
