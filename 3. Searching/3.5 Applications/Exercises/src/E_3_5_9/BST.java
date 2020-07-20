@@ -80,6 +80,7 @@ public class BST<Key extends Comparable<Key>, Value> {
             node.right = this.delete(node.right, key);
         } else {
             // find max in left subtree and make it root
+            // Using collection for multiple values reduces implementation complexity
             if (node.left != null) {
                 Node maxNode = this.findMax(node.left);
                 maxNode.left = this.deleteMax(node.left);
