@@ -4,48 +4,33 @@ import edu.princeton.cs.algs4.Queue;
 
 public class LinearProbingHashST<Key, Value> {
     Key[] keys;
-    Queue<Value>[] values;
+    Value[] values;
     int N;
     int M;
 
     LinearProbingHashST() {
         this.M = 4;
         this.keys = (Key[]) new Object[this.M];
-        this.values = (Queue<Value>[]) new Queue[this.M];
+        this.values = (Value[]) new Object[this.M];
     }
 
     LinearProbingHashST(int cap) {
         this.M = cap;
         this.keys = (Key[]) new Object[this.M];
-        this.values = (Queue<Value>[]) new Queue[this.M];
+        this.values = (Value[]) new Object[this.M];
     }
 
     public void put(Key key, Value value) {
         int i = 0;
         for (i = this.hash(key); this.keys[i] != null; i = (i + 1) % this.M) {
-            if (this.keys[i].equals(key)) {
-                this.values[i].enqueue(value);
-                return;
-            }
+            // iterate till null
         }
         this.keys[i] = key;
-        this.values[i] = new Queue<Value>();
-        this.values[i].enqueue(value);
+        this.values[i] = value;
         this.N++;
         if (this.N == this.M / 2) {
-            this.resize(this.N * 2);
+            this.resize(this.M * 2);
         }
-    }
-
-    public void put(Key key, Queue<Value> valueQ) {
-        int i = 0;
-        for (i = this.hash(key); this.keys[i] != null; i = (i + 1) % this.M) {
-            // find next position to insert
-        }
-        this.keys[i] = key;
-        this.values[i] = valueQ;
-        this.N++;
-        // no need to resize
     }
 
     private void resize(int newSize) {
@@ -67,7 +52,7 @@ public class LinearProbingHashST<Key, Value> {
     public Value get(Key key) {
         for (int i = this.hash(key); this.keys[i] != null; i = (i + 1) % this.M) {
             if (this.keys[i].equals(key)) {
-                return this.values[i].peek();
+                return this.values[i];
             }
         }
         return null;
@@ -80,13 +65,17 @@ public class LinearProbingHashST<Key, Value> {
                 break;
             }
         }
-        this.keys[i] = null;
-        this.values[i] = null;
-        this.N--;
-        i = (i + 1) % this.M;
+
+        while (this.keys[i].equals(key)) {
+            this.keys[i] = null;
+            this.values[i] = null;
+            this.N--;
+            i = (i + 1) % this.M;
+        }
+
         while (this.keys[i] != null) {
             Key tKey = this.keys[i];
-            Queue<Value> tValue = this.values[i];
+            Value tValue = this.values[i];
             this.keys[i] = null;
             this.values[i] = null;
             this.N--;
