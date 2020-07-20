@@ -72,4 +72,31 @@ public class LinearProbingHashST<Key, Value> {
         }
         return null;
     }
+
+    public void delete(Key key) {
+        int i = 0;
+        for (i = this.hash(key); this.keys[i] != null; i = (i + 1) % this.M) {
+            if (this.keys[i].equals(key)) {
+                break;
+            }
+        }
+        this.keys[i] = null;
+        this.values[i] = null;
+        this.N--;
+        i = (i + 1) % this.M;
+        while (this.keys[i] != null) {
+            Key tKey = this.keys[i];
+            Queue<Value> tValue = this.values[i];
+            this.keys[i] = null;
+            this.values[i] = null;
+            this.N--;
+            this.put(tKey, tValue);
+            i = (i + 1) % this.M;
+        }
+
+        if (this.N == this.M / 8) {
+            this.resize(this.M / 2);
+        }
+
+    }
 }

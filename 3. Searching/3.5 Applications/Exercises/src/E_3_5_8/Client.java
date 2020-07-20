@@ -21,5 +21,10 @@ public class Client {
         st.put(4, "4-two");
         st.put(4, "4-three");
         StdOut.println(st.get(4));
+        st.delete(3);
+        StdOut.println(st.get(3));
+        st.put(3, "3-one");
+        st.put(3, "3-two");
+        StdOut.println(st.get(3));
     }
 }
