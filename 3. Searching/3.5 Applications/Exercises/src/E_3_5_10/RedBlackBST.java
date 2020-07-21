@@ -271,6 +271,14 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         return node.value.peek();
     }
 
+    public Iterable<Value> getAll(Key key) {
+        Node node = this.get(this.root, key);
+        if (node == null) {
+            return null;
+        }
+        return node.value;
+    }
+
     private Node get(Node node, Key key) {
         if (node == null) {
             return null;
@@ -298,6 +306,24 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         this.keys(node.left, q);
         q.enqueue(node.key);
         this.keys(node.right, q);
+    }
+
+    public boolean contains(Key key) {
+        return this.contains(this.root, key);
+    }
+
+    private boolean contains(Node node, Key key) {
+        if (node == null) {
+            return false;
+        }
+        int cmp = key.compareTo(node.key);
+        if (cmp < 0) {
+            return this.contains(node.left, key);
+        } else if (cmp > 0) {
+            return this.contains(node.right, key);
+        } else {
+            return true;
+        }
     }
 
 }

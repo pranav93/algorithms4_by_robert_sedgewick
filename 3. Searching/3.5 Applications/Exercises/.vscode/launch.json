@@ -1,0 +1,140 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "E_3_5_12",
+            "request": "launch",
+            "mainClass": "E_3_5_12.LookupCSV",
+            "args": "src/E_3_5_12/amino.csv 3 0"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<Exercises_9761129c>",
+            "request": "launch",
+            "mainClass": "E_3_5_1.HashSET.Client",
+            "projectName": "Exercises_9761129c"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<Exercises_9761129c>(1)",
+            "request": "launch",
+            "mainClass": "E_3_5_1.SET.Client",
+            "projectName": "Exercises_9761129c"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<Exercises_9761129c>(2)",
+            "request": "launch",
+            "mainClass": "E_3_5_10.Client",
+            "projectName": "Exercises_9761129c"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<Exercises_9761129c>(3)",
+            "request": "launch",
+            "mainClass": "E_3_5_11.Client",
+            "projectName": "Exercises_9761129c"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-LookupCSV<Exercises_9761129c>",
+            "request": "launch",
+            "mainClass": "E_3_5_12.LookupCSV",
+            "projectName": "Exercises_9761129c"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<Exercises_9761129c>(4)",
+            "request": "launch",
+            "mainClass": "E_3_5_2.Client",
+            "projectName": "Exercises_9761129c"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<Exercises_9761129c>(5)",
+            "request": "launch",
+            "mainClass": "E_3_5_3.Client",
+            "projectName": "Exercises_9761129c"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<Exercises_9761129c>(6)",
+            "request": "launch",
+            "mainClass": "E_3_5_4.HashSTdouble.Client",
+            "projectName": "Exercises_9761129c"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<Exercises_9761129c>(7)",
+            "request": "launch",
+            "mainClass": "E_3_5_4.HashSTint.Client",
+            "projectName": "Exercises_9761129c"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<Exercises_9761129c>(8)",
+            "request": "launch",
+            "mainClass": "E_3_5_5.STdouble.Client",
+            "projectName": "Exercises_9761129c"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<Exercises_9761129c>(9)",
+            "request": "launch",
+            "mainClass": "E_3_5_5.STint.Client",
+            "projectName": "Exercises_9761129c"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<Exercises_9761129c>(10)",
+            "request": "launch",
+            "mainClass": "E_3_5_6.HashSETdouble.Client",
+            "projectName": "Exercises_9761129c"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<Exercises_9761129c>(11)",
+            "request": "launch",
+            "mainClass": "E_3_5_6.HashSETint.Client",
+            "projectName": "Exercises_9761129c"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<Exercises_9761129c>(12)",
+            "request": "launch",
+            "mainClass": "E_3_5_7.SETdouble.Client",
+            "projectName": "Exercises_9761129c"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<Exercises_9761129c>(13)",
+            "request": "launch",
+            "mainClass": "E_3_5_7.SETint.Client",
+            "projectName": "Exercises_9761129c"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<Exercises_9761129c>(14)",
+            "request": "launch",
+            "mainClass": "E_3_5_8.Client",
+            "projectName": "Exercises_9761129c"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<Exercises_9761129c>(15)",
+            "request": "launch",
+            "mainClass": "E_3_5_9.Client",
+            "projectName": "Exercises_9761129c"
+        }
+    ]
+}
