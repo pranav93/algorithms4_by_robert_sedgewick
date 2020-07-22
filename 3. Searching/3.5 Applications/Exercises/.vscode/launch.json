@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Client",
+            "request": "launch",
+            "mainClass": "E_3_5_16.Client",
+            "projectName": "Exercises_9761129c"
+        },
+        {
+            "type": "java",
             "name": "E_3_5_15",
             "request": "launch",
             "mainClass": "E_3_5_15.Kgrams",
