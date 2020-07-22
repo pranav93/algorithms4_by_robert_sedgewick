@@ -6,6 +6,14 @@
     "configurations": [
         {
             "type": "java",
+            "name": "E_3_5_13",
+            "request": "launch",
+            "mainClass": "E_3_5_13.LookupCSV",
+            "projectName": "Exercises_9761129c",
+            "args": "src/E_3_5_12/amino.csv 3 0"
+        },
+        {
+            "type": "java",
             "name": "E_3_5_12",
             "request": "launch",
             "mainClass": "E_3_5_12.LookupCSV",

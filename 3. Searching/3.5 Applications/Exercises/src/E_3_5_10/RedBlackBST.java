@@ -295,17 +295,32 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
 
     public Iterable<Key> keys() {
         Queue<Key> q = new Queue<Key>();
-        this.keys(this.root, q);
+        this.keys(this.root, q, null, null);
         return q;
     }
 
-    private void keys(Node node, Queue<Key> q) {
+    public Iterable<Key> keys(Key min, Key max) {
+        Queue<Key> q = new Queue<Key>();
+        this.keys(this.root, q, min, max);
+        return q;
+    }
+
+    private void keys(Node node, Queue<Key> q, Key min, Key max) {
         if (node == null) {
             return;
         }
-        this.keys(node.left, q);
-        q.enqueue(node.key);
-        this.keys(node.right, q);
+        int cmp1, cmp2;
+        this.keys(node.left, q, min, max);
+        if (min == null && max == null) {
+            q.enqueue(node.key);
+        } else {
+            cmp1 = node.key.compareTo(min);
+            cmp2 = node.key.compareTo(max);
+            if (cmp1 >= 0 && cmp2 <= 0) {
+                q.enqueue(node.key);
+            }
+        }
+        this.keys(node.right, q, min, max);
     }
 
     public boolean contains(Key key) {
