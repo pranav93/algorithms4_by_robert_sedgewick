@@ -1,6 +1,3 @@
 *.class
-*largeT.txt
-*largeW.txt
 *.swp
 *bin/*
-*txt

@@ -1,0 +1,29 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-App<Examples_75ff3314>",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "Examples_75ff3314"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<Examples_75ff3314>",
+            "request": "launch",
+            "mainClass": "Graph.Client",
+            "projectName": "Examples_75ff3314",
+            "args": "src/Graph/tinyG.txt"
+        }
+    ]
+}
