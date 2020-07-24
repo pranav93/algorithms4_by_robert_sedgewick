@@ -6,6 +6,38 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Client",
+            "request": "launch",
+            "mainClass": "BreadthFirstPaths.Client",
+            "projectName": "Examples_75ff3314",
+            "args": "src/BreadthFirstPaths/tinyCG.txt 0"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Client",
+            "request": "launch",
+            "mainClass": "DepthFirstPaths.Client",
+            "projectName": "Examples_75ff3314",
+            "args": "src/DepthFirstPaths/tinyCG.txt 0"
+        },
+        {
+            "type": "java",
+            "name": "DepthFirstSearch - Not connected",
+            "request": "launch",
+            "mainClass": "DepthFirstSearch.Client",
+            "projectName": "Examples_75ff3314",
+            "args": "src/DepthFirstSearch/tinyG.txt 9"
+        },
+        {
+            "type": "java",
+            "name": "DepthFirstSearch - connected",
+            "request": "launch",
+            "mainClass": "DepthFirstSearch.Client",
+            "projectName": "Examples_75ff3314",
+            "args": "src/DepthFirstSearch/tinyCG.txt 0"
+        },
+        {
+            "type": "java",
             "name": "Debug (Launch) - Current File",
             "request": "launch",
             "mainClass": "${file}"
