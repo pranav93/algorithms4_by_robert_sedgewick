@@ -8,6 +8,14 @@
             "type": "java",
             "name": "CodeLens (Launch) - Client",
             "request": "launch",
+            "mainClass": "Cycle.Client",
+            "projectName": "Examples_75ff3314",
+            "args": "src/Cycle/tinyG.txt"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Client",
+            "request": "launch",
             "mainClass": "CC.Client",
             "projectName": "Examples_75ff3314",
             "args": "src/CC/tinyG.txt"
