@@ -6,6 +6,22 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Kevin - DegreesOfSeparation",
+            "request": "launch",
+            "mainClass": "DegreesOfSeparation.DegreesOfSeparation",
+            "projectName": "Examples_75ff3314",
+            "args": "src/DegreesOfSeparation/movies.txt \"/\" \"Bacon, Kevin\""
+        },
+        {
+            "type": "java",
+            "name": "Flight - DegreesOfSeparation",
+            "request": "launch",
+            "mainClass": "DegreesOfSeparation.DegreesOfSeparation",
+            "projectName": "Examples_75ff3314",
+            "args": "src/DegreesOfSeparation/routes.txt \" \" JFK"
+        },
+        {
+            "type": "java",
             "name": "SymbolGraph 1",
             "request": "launch",
             "mainClass": "SymbolGraph.Client",
