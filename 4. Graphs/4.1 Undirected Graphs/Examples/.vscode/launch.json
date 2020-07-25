@@ -6,6 +6,22 @@
     "configurations": [
         {
             "type": "java",
+            "name": "SymbolGraph 1",
+            "request": "launch",
+            "mainClass": "SymbolGraph.Client",
+            "projectName": "Examples_75ff3314",
+            "args": "src/SymbolGraph/moviesG.txt \"/\" "
+        },
+        {
+            "type": "java",
+            "name": "SymbolGraph 2",
+            "request": "launch",
+            "mainClass": "SymbolGraph.Client",
+            "projectName": "Examples_75ff3314",
+            "args": "src/SymbolGraph/routes.txt \" \""
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Client",
             "request": "launch",
             "mainClass": "TwoColor.Client",
