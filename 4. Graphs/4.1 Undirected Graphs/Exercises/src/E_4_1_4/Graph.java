@@ -1,4 +1,4 @@
-package E_4_1_3;
+package E_4_1_4;
 
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.SET;
@@ -45,4 +45,12 @@ public class Graph {
         return this.adj[v];
     }
 
+    public boolean hasEdge(int v, int w) {
+        for (int setVal : this.adj[v]) {
+            if (setVal == w) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
