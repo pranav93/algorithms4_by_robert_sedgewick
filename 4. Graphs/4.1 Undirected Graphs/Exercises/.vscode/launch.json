@@ -8,17 +8,33 @@
             "type": "java",
             "name": "CodeLens (Launch) - Client",
             "request": "launch",
+            "mainClass": "E_4_1_10.Client",
+            "projectName": "Exercises_254ffc30",
+            "args": "src/E_4_1_10/graph.txt"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Client",
+            "request": "launch",
             "mainClass": "E_4_1_8.Client",
             "projectName": "Exercises_254ffc30",
             "args": "src/E_4_1_8/tinyG.txt"
         },
         {
             "type": "java",
-            "name": "CodeLens (Launch) - Client",
+            "name": "E_4_1_7 tinyG",
             "request": "launch",
             "mainClass": "E_4_1_7.Client",
             "projectName": "Exercises_254ffc30",
-            "args": "src/E_4_1_5/tinyG.txt"
+            "args": "src/E_4_1_7/tinyG.txt"
+        },
+        {
+            "type": "java",
+            "name": "E_4_1_7 tinyGex2",
+            "request": "launch",
+            "mainClass": "E_4_1_7.Client",
+            "projectName": "Exercises_254ffc30",
+            "args": "src/E_4_1_7/tinyGex2.txt"
         },
         {
             "type": "java",
