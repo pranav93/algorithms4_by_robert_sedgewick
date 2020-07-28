@@ -6,6 +6,22 @@
     "configurations": [
         {
             "type": "java",
+            "name": "E_4_1_18",
+            "request": "launch",
+            "mainClass": "E_4_1_18.Client",
+            "projectName": "Exercises_254ffc30",
+            "args": "src/E_4_1_18/tinyG.txt"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Client",
+            "request": "launch",
+            "mainClass": "E_4_1_16.Client",
+            "projectName": "Exercises_254ffc30",
+            "args": "src/E_4_1_16/tinyG.txt"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Client",
             "request": "launch",
             "mainClass": "E_4_1_15.Client",
