@@ -8,6 +8,14 @@
             "type": "java",
             "name": "CodeLens (Launch) - Client",
             "request": "launch",
+            "mainClass": "E_4_1_15.Client",
+            "projectName": "Exercises_254ffc30",
+            "args": "src/E_4_1_15/tinyGadj.txt"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Client",
+            "request": "launch",
             "mainClass": "E_4_1_13.Client",
             "projectName": "Exercises_254ffc30",
             "args": "src/E_4_1_13/tinyG.txt"
