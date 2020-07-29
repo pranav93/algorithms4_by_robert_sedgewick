@@ -9,7 +9,10 @@ public class Client {
         StdOut.println(G);
 
         for (int i = 0; i < G.V(); i++) {
-            FindSmallestCycle fg = new FindSmallestCycle(G, i);            
+            FindSmallestCycle fg = new FindSmallestCycle(G, i);
+            StdOut.println("path -> " + fg.path());
+            StdOut.println("cycleSize -> " + fg.cycleSize());
+            StdOut.println("-------------------------------");
         }
     }
 }
