@@ -10,7 +10,7 @@
             "request": "launch",
             "mainClass": "E_4_1_18.Client",
             "projectName": "Exercises_254ffc30",
-            "args": "src/E_4_1_18/tinyG.txt"
+            "args": "src/E_4_1_18/tinyCG.txt"
         },
         {
             "type": "java",
