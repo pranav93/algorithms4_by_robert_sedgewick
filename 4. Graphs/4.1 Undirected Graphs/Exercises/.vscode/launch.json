@@ -6,11 +6,35 @@
     "configurations": [
         {
             "type": "java",
-            "name": "E_4_1_18",
+            "name": "E_4_1_18 (1)",
             "request": "launch",
             "mainClass": "E_4_1_18.Client",
             "projectName": "Exercises_254ffc30",
             "args": "src/E_4_1_18/tinyCG.txt"
+        },
+        {
+            "type": "java",
+            "name": "E_4_1_18 (2)",
+            "request": "launch",
+            "mainClass": "E_4_1_18.Client",
+            "projectName": "Exercises_254ffc30",
+            "args": "src/E_4_1_18/tinyCG2.txt"
+        },
+        {
+            "type": "java",
+            "name": "E_4_1_18 (3)",
+            "request": "launch",
+            "mainClass": "E_4_1_18.Client",
+            "projectName": "Exercises_254ffc30",
+            "args": "src/E_4_1_18/tinyCG3.txt"
+        },
+        {
+            "type": "java",
+            "name": "E_4_1_18 (4)",
+            "request": "launch",
+            "mainClass": "E_4_1_18.Client",
+            "projectName": "Exercises_254ffc30",
+            "args": "src/E_4_1_18/tinyCG4.txt"
         },
         {
             "type": "java",

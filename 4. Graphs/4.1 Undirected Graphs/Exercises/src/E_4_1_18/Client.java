@@ -8,11 +8,8 @@ public class Client {
         Graph G = new Graph(new In(args[0]));
         StdOut.println(G);
 
-        for (int i = 0; i < G.V(); i++) {
-            FindSmallestCycle fg = new FindSmallestCycle(G, i);
-            StdOut.println("path -> " + fg.path());
-            StdOut.println("cycleSize -> " + fg.cycleSize());
-            StdOut.println("-------------------------------");
-        }
+        FindGirth fg = new FindGirth(G);
+        StdOut.println("girth -> " + fg.girth());
+        StdOut.println("girthPath -> " + fg.girthPath());
     }
 }
