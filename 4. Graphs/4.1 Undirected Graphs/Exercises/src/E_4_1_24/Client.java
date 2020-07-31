@@ -40,30 +40,12 @@ public class Client {
         StdOut.println();
 
         GraphProperties gp = new GraphProperties(cc, 0);
-        int diameter = gp.diameter();
-        int radius = gp.radius();
-        int center = gp.center();
+        int[] props = gp.props();
+        StdOut.println("diameter -> " + props[1]);
+        StdOut.println("radius -> " + props[0]);
+        StdOut.println("center -> " + props[2]);
 
-        StdOut.println("===================================================");
-        StdOut.println("diameter -> " + diameter);
-        StdOut.println("radius -> " + radius);
-        StdOut.println("center -> " + center);
-        // int bIndex = SG.index("Bacon, Kevin");
-        // StdOut.println("Kevin Bacon eccentricity -> " +
-        // cc.eccentricity(largestCompId, bIndex));
-        // StdOut.println("Diameter of compId " + largestCompId + " -> " +
-        // cc.diameter(largestCompId));
-        // StdOut.println("Radius of compId " + largestCompId + " -> " +
-        // cc.radius(largestCompId));
-        // StdOut.println("Center of compId " + largestCompId + " -> " +
-        // cc.center(largestCompId));
-
-        // int chosenCompId = 0;
-        // StdOut.println("Diameter of compId " + chosenCompId + " -> " +
-        // cc.diameter(chosenCompId));
-        // StdOut.println("Radius of compId " + chosenCompId + " -> " +
-        // cc.radius(chosenCompId));
-        // StdOut.println("Center of compId " + chosenCompId + " -> " +
-        // cc.center(chosenCompId));
+        FindSmallestCycle fsc = new FindSmallestCycle(G, SG.index("Bacon, Kevin"));
+        StdOut.println("Girth -> " + fsc.cycleSize());
     }
 }

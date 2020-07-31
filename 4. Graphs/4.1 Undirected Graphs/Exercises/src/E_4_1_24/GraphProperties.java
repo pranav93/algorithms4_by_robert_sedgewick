@@ -33,10 +33,13 @@ class GraphProperties {
         return maxDist;
     }
 
-    public int diameter() {
+    public int[] props() {
         int maxEcc = Integer.MIN_VALUE;
+        int minEcc = Integer.MAX_VALUE;
+        int[] out = new int[3];
+
         int count = 0;
-        int chunk = 100;
+        int chunk = 500;
         for (int i = 0; i < this.V; i++) {
             if (this.connectedComponents.connections[i] == compId) {
                 int ecci = this.eccentricity(i);
@@ -44,36 +47,23 @@ class GraphProperties {
                 if (ecci > maxEcc) {
                     maxEcc = ecci;
                 }
-                if (count % chunk == 0) {
-                    StdOut.println("processed count -> " + count + " / " + this.compSize);
-                }
-            }
-        }
-        StdOut.println("------------------------");
-        return maxEcc;
-    }
-
-    public int radius() {
-        int minEcc = Integer.MAX_VALUE;
-        int count = 0;
-        int chunk = 100;
-        for (int i = 0; i < this.V; i++) {
-            if (this.connectedComponents.connections[i] == compId) {
-                int ecci = this.eccentricity(i);
-                count++;
                 if (ecci < minEcc) {
                     minEcc = ecci;
                 }
+
                 if (count % chunk == 0) {
-                    StdOut.println("processed count -> " + count + " / " + this.compSize);
+                    StdOut.println("processed percent -> " + ((double) count * 100 / this.compSize));
                 }
             }
         }
-        return minEcc;
+        out[0] = minEcc;
+        out[1] = maxEcc;
+        out[2] = this.center(minEcc);
+        StdOut.println("------------------------");
+        return out;
     }
 
-    public int center() {
-        int radius = this.radius();
+    public int center(int radius) {
         for (int i = 0; i < this.V; i++) {
             if (this.connectedComponents.connections[i] == compId) {
                 int ecci = this.eccentricity(i);

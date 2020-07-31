@@ -64,19 +64,4 @@ public class ConnectedComponents {
         return this.connections[v] == compId;
     }
 
-    public int eccentricity(int compId, int v) {
-        return new GraphProperties(this, compId).eccentricity(v);
-    }
-
-    public int diameter(int compId) {
-        return new GraphProperties(this, compId).diameter();
-    }
-
-    public int radius(int compId) {
-        return new GraphProperties(this, compId).radius();
-    }
-
-    public int center(int compId) {
-        return new GraphProperties(this, compId).center();
-    }
 }
