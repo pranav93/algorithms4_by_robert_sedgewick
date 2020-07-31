@@ -8,6 +8,14 @@
             "type": "java",
             "name": "CodeLens (Launch) - Client",
             "request": "launch",
+            "mainClass": "E_4_1_24.Client",
+            "projectName": "Exercises_254ffc30",
+            "args": "src/E_4_1_24/movies.txt \"/\""
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Client",
+            "request": "launch",
             "mainClass": "E_4_1_23.Client",
             "projectName": "Exercises_254ffc30",
             "args": "src/E_4_1_23/movies.txt \"/\""
