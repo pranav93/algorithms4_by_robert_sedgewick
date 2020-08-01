@@ -16,6 +16,7 @@ public class DegreesOfSeparation {
         }
         int s = sg.index(source);
         DepthFirstPaths dfs = new DepthFirstPaths(G, s, sg);
+        StdOut.println("Done processing");
 
         while (StdIn.hasNextLine()) {
             String sink = StdIn.readLine();

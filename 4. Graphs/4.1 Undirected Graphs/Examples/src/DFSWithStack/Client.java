@@ -1,6 +1,5 @@
-package DepthFirstSearch;
+package DFSWithStack;
 
-import Graph.Graph;
 import edu.princeton.cs.algs4.In;
 
 import edu.princeton.cs.algs4.StdOut;
@@ -24,7 +23,6 @@ public class Client {
             StdOut.print("NOT ");
         }
         StdOut.println("connected");
-
         int[] edgeTo = search.edgeTo();
 
         for (int i = 0; i < edgeTo.length; i++) {

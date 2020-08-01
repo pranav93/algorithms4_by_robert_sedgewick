@@ -5,9 +5,11 @@ import Graph.Graph;
 public class DepthFirstSearch {
     private boolean[] marked;
     private int count;
+    private int[] edgeTo;
 
     public DepthFirstSearch(Graph G, int s) {
         this.marked = new boolean[G.V()];
+        this.edgeTo = new int[G.V()];
         this.dfs(G, s);
     }
 
@@ -16,6 +18,7 @@ public class DepthFirstSearch {
         this.count++;
         for (int w : G.adj(v)) {
             if (!this.marked[w]) {
+                this.edgeTo[w] = v;
                 dfs(G, w);
             }
         }
@@ -27,5 +30,9 @@ public class DepthFirstSearch {
 
     public int count() {
         return this.count;
+    }
+
+    public int[] edgeTo() {
+        return this.edgeTo;
     }
 }

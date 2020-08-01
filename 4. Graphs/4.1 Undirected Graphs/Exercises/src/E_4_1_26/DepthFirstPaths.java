@@ -1,5 +1,7 @@
 package E_4_1_26;
 
+import java.util.Iterator;
+
 import edu.princeton.cs.algs4.Graph;
 import edu.princeton.cs.algs4.Stack;
 import edu.princeton.cs.algs4.StdOut;
@@ -21,33 +23,48 @@ public class DepthFirstPaths {
         this.marked = new boolean[this.V];
         this.edgeTo = new int[this.V];
 
-        this.dfs();
+        this.dfs(this.source);
     }
 
-    private void dfs() {
-        this.marked[this.source] = true;
-        this.edgeTo[this.source] = this.source;
-        int v = this.source;
+    private void dfs(int v) {
+        this.marked[v] = true;
+        this.edgeTo[v] = v;
 
         Stack<Integer> stack = new Stack<Integer>();
-        stack.push(this.source);
+        Stack<Iterator<Integer>> stackitV = new Stack<Iterator<Integer>>();
+        Iterator<Integer> itV = this.G.adj(v).iterator();
+        stackitV.push(itV);
+        stack.push(v);
 
-        for (int w : this.G.adj(v)) {
-            if (!this.marked[w]) {
-                this.marked[w] = true;
-                this.edgeTo[w] = v;
-                stack.push(w);
-                StdOut.println(this.SG.name(v));
-                v = w;
-            } else {
-                v = stack.pop();
+        while (!stack.isEmpty()) {
+            v = stack.peek();
+            itV = stackitV.peek();
+            while (itV.hasNext()) {
+                int w = itV.next();
+                if (!this.marked[w]) {
+                    this.marked[w] = true;
+                    this.edgeTo[w] = v;
+                    stack.push(w);
+                    stackitV.push(this.G.adj(w).iterator());
+                    v = w;
+                    itV = stackitV.peek();
+                }
             }
+            v = stack.pop();
+            itV = stackitV.pop();
         }
     }
 
     public boolean hasPathTo(int v) {
+        boolean[] alreadyVisited = new boolean[this.G.V()];
         while (v != this.edgeTo[v]) {
+            if (!alreadyVisited[v]) {
+                alreadyVisited[v] = true;
+            } else {
+                break;
+            }
             v = this.edgeTo[v];
+            StdOut.println(this.SG.name(v));
         }
         return v == this.source;
     }
