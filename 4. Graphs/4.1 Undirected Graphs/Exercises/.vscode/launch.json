@@ -6,12 +6,35 @@
     "configurations": [
         {
             "type": "java",
+            "name": "E_4_1_29 - parallel edge",
+            "request": "launch",
+            "mainClass": "E_4_1_29.Client",
+            "projectName": "Exercises_254ffc30",
+            "args": "src/E_4_1_29/tinyG2Edge.txt"
+        },
+        {
+            "type": "java",
+            "name": "E_4_1_29 - normal",
+            "request": "launch",
+            "mainClass": "E_4_1_29.Client",
+            "projectName": "Exercises_254ffc30",
+            "args": "src/E_4_1_29/tinyG.txt"
+        },
+        {
+            "type": "java",
+            "name": "E_4_1_29 - selfloop",
+            "request": "launch",
+            "mainClass": "E_4_1_29.Client",
+            "projectName": "Exercises_254ffc30",
+            "args": "src/E_4_1_29/tinyGLoop.txt"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - DegreesOfSeparation",
             "request": "launch",
             "mainClass": "E_4_1_26.DegreesOfSeparation",
             "projectName": "Exercises_254ffc30",
             "args": "src/E_4_1_26/movies.txt \"/\" \"Bacon, Kevin\""
-            // "console": "externalTerminal"
         },
         {
             "type": "java",
