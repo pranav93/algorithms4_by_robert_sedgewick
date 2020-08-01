@@ -8,6 +8,15 @@
             "type": "java",
             "name": "CodeLens (Launch) - DegreesOfSeparation",
             "request": "launch",
+            "mainClass": "E_4_1_26.DegreesOfSeparation",
+            "projectName": "Exercises_254ffc30",
+            "args": "src/E_4_1_26/movies.txt \"/\" \"Bacon, Kevin\""
+            // "console": "externalTerminal"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - DegreesOfSeparation",
+            "request": "launch",
             "mainClass": "E_4_1_25.DegreesOfSeparation",
             "projectName": "Exercises_254ffc30",
             "args": "src/E_4_1_25/movies.txt \"/\" \"Bacon, Kevin\" 30"

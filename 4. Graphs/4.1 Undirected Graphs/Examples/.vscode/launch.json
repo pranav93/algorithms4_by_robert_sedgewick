@@ -6,6 +6,14 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Client",
+            "request": "launch",
+            "mainClass": "DFSWithStack.Client",
+            "projectName": "Examples_75ff3314",
+            "args": "src/DFSWithStack/tinyCG.txt 0"
+        },
+        {
+            "type": "java",
             "name": "Kevin - DegreesOfSeparation",
             "request": "launch",
             "mainClass": "DegreesOfSeparation.DegreesOfSeparation",
