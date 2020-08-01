@@ -6,6 +6,30 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CycleLoop - 2Edge",
+            "request": "launch",
+            "mainClass": "CycleLoop.Client",
+            "projectName": "Examples_75ff3314",
+            "args": "src/CycleLoop/tinyG2Edge.txt"
+        },
+        {
+            "type": "java",
+            "name": "CycleLoop - loop",
+            "request": "launch",
+            "mainClass": "CycleLoop.Client",
+            "projectName": "Examples_75ff3314",
+            "args": "src/CycleLoop/tinyGLoop.txt"
+        },
+        {
+            "type": "java",
+            "name": "CycleLoop - normal",
+            "request": "launch",
+            "mainClass": "CycleLoop.Client",
+            "projectName": "Examples_75ff3314",
+            "args": "src/CycleLoop/tinyG.txt"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Client",
             "request": "launch",
             "mainClass": "DFSWithStack.Client",
