@@ -6,6 +6,14 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Client",
+            "request": "launch",
+            "mainClass": "DirectedCycle.Client",
+            "projectName": "Examples_8409ba9a",
+            "args": "src/DirectedCycle/tinyDG.txt"
+        },
+        {
+            "type": "java",
             "name": "DirectedDFS 1",
             "request": "launch",
             "mainClass": "DirectedDFS.Client",
