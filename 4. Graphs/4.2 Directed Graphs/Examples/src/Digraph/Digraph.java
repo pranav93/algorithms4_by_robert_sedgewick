@@ -17,7 +17,7 @@ public class Digraph {
         }
     }
 
-    Digraph(In in) {
+    public Digraph(In in) {
         this(in.readInt());
         int e = in.readInt();
         for (int i = 0; i < e; i++) {

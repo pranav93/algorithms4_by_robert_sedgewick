@@ -6,6 +6,22 @@
     "configurations": [
         {
             "type": "java",
+            "name": "DirectedDFS 1",
+            "request": "launch",
+            "mainClass": "DirectedDFS.Client",
+            "projectName": "Examples_8409ba9a",
+            "args": "src/DirectedDFS/tinyDG.txt 2"
+        },
+        {
+            "type": "java",
+            "name": "DirectedDFS 2",
+            "request": "launch",
+            "mainClass": "DirectedDFS.Client",
+            "projectName": "Examples_8409ba9a",
+            "args": "src/DirectedDFS/tinyDG.txt 1 2 6"
+        },
+        {
+            "type": "java",
             "name": "Debug (Launch) - Current File",
             "request": "launch",
             "mainClass": "${file}"
