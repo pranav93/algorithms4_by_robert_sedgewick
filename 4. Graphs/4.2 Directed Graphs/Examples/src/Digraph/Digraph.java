@@ -8,7 +8,7 @@ public class Digraph {
     private int E;
     private Bag<Integer>[] adj;
 
-    Digraph(int v) {
+    public Digraph(int v) {
         this.V = v;
         this.E = 0;
         this.adj = (Bag<Integer>[]) new Bag[this.V];

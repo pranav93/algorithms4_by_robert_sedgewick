@@ -8,6 +8,14 @@
             "type": "java",
             "name": "CodeLens (Launch) - Client",
             "request": "launch",
+            "mainClass": "Topological.Client",
+            "projectName": "Examples_8409ba9a",
+            "args": "src/Topological/jobs.txt \"/\""
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Client",
+            "request": "launch",
             "mainClass": "DirectedCycle.Client",
             "projectName": "Examples_8409ba9a",
             "args": "src/DirectedCycle/tinyDG.txt"
