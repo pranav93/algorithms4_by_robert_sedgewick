@@ -8,6 +8,14 @@
             "type": "java",
             "name": "CodeLens (Launch) - Client",
             "request": "launch",
+            "mainClass": "TransitiveClosure.Client",
+            "projectName": "Examples_8409ba9a",
+            "args": "src/TransitiveClosure/tinyDG.txt"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Client",
+            "request": "launch",
             "mainClass": "KosarajuSCC.Client",
             "projectName": "Examples_8409ba9a",
             "args": "src/KosarajuSCC/tinyDG.txt"
