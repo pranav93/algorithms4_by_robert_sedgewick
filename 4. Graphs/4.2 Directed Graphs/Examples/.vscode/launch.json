@@ -65,6 +65,15 @@
             "mainClass": "Digraph.Client",
             "projectName": "Examples_8409ba9a",
             "args": "src/Digraph/tinyDG.txt"
+        },
+        {
+            "type": "java",
+            "name": "Digraph 2",
+            "request": "launch",
+            "mainClass": "Digraph.Client",
+            "projectName": "Examples_8409ba9a",
+            "args": "src/Digraph/tinyDGex2.txt"
         }
+
     ]
 }
