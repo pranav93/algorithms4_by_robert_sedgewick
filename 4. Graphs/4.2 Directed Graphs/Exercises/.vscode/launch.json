@@ -1,0 +1,38 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "E_4_2_5",
+            "request": "launch",
+            "mainClass": "E_4_2_5.Client",
+            "projectName": "Exercises_d896656a",
+            "args": "src/E_4_2_5/tinyDGex2.txt"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Client",
+            "request": "launch",
+            "mainClass": "E_4_2_4.Client",
+            "projectName": "Exercises_d896656a",
+            "args": "src/E_4_2_4/tinyDGex2.txt"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<Exercises_d896656a>",
+            "request": "launch",
+            "mainClass": "E_4_2_3.Client",
+            "projectName": "Exercises_d896656a",
+            "args": "src/E_4_2_3/tinyDGex2.txt"
+        }
+    ]
+}
