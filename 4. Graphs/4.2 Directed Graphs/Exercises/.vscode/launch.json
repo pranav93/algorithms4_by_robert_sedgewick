@@ -6,6 +6,14 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Client",
+            "request": "launch",
+            "mainClass": "E_4_2_7.Client",
+            "projectName": "Exercises_d896656a",
+            "args": "src/E_4_2_7/tinyDGex2.txt"
+        },
+        {
+            "type": "java",
             "name": "E_4_2_5",
             "request": "launch",
             "mainClass": "E_4_2_5.Client",
